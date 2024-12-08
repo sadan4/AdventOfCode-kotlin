@@ -1,10 +1,14 @@
 package zip.sadan
 
 import util.input.UseFile
+import zip.sadan.util.debug.log
 import zip.sadan.util.input.makeLines
 import java.io.File
 import kotlin.reflect.KFunction
+import kotlin.reflect.full.findAnnotation
+import kotlin.reflect.full.findAnnotations
 import kotlin.reflect.full.functions
+import kotlin.reflect.jvm.javaMethod
 import kotlin.reflect.jvm.jvmErasure
 
 abstract class Solution<T> {
@@ -16,9 +20,7 @@ abstract class Solution<T> {
     abstract fun part2(input: T): Any
 
     private fun <T> generateInput(fn: KFunction<*>): T {
-        val fileName = (fn.javaClass.annotations.filterIsInstance<UseFile>().getOrElse(0) {
-            UseFile("input.txt")
-        }).fileName
+        val fileName = (fn.findAnnotation<UseFile>() ?: UseFile("input.txt")).fileName
         val f = File("src/main/kotlin/solutions/y$year/d$day/$fileName")
         val ret: Any = when (fn.parameters[1].type.jvmErasure) {
             File::class -> f
