@@ -24,7 +24,7 @@ class Code : Solution<List<String>>() {
     override val year: Number = 24
     override val day: Number = 4
 
-    override fun part1(input: List<String>): Any {
+    override fun part1(input: List<String>): Any? {
         val mappedInput = input.toBufferedCharArray(3, '0')
         return mappedInput
             .map {
@@ -62,7 +62,7 @@ class Code : Solution<List<String>>() {
     }
 
     @UseFile("input.txt")
-    override fun part2(input: List<String>): Any {
+    override fun part2(input: List<String>): Any? {
         val radius = 1
         val mappedInput = input.toBufferedCharArray(radius, '0')
         return mappedInput

@@ -6,13 +6,12 @@ import zip.sadan.util.pair.map
 import zip.sadan.util.pair.mult
 import zip.sadan.util.regex.Regex
 import zip.sadan.util.regex.captureAll
-import java.io.File
 
 class Code : Solution<String>() {
     override val year: Number = 24
     override val day: Number = 3
 
-    override fun part1(input: String): Any = input
+    override fun part1(input: String): Any? = input
         .captureAll(Regex("mul\\((\\d+),(\\d+)\\)"))
         .sumOf {
             it
@@ -22,5 +21,5 @@ class Code : Solution<String>() {
         }
 
 
-    override fun part2(input: String): Any = this.part1(input.replace(Regex("don't\\(\\).*?(?:do\\(\\)|$)", "s"), ""))
+    override fun part2(input: String): Any? = this.part1(input.replace(Regex("don't\\(\\).*?(?:do\\(\\)|$)", "s"), ""))
 }

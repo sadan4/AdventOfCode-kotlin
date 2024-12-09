@@ -1,23 +1,20 @@
 package zip.sadan
 
 import util.input.UseFile
-import zip.sadan.util.debug.log
 import zip.sadan.util.input.makeLines
 import java.io.File
 import kotlin.reflect.KFunction
 import kotlin.reflect.full.findAnnotation
-import kotlin.reflect.full.findAnnotations
 import kotlin.reflect.full.functions
-import kotlin.reflect.jvm.javaMethod
 import kotlin.reflect.jvm.jvmErasure
 
 abstract class Solution<T> {
     abstract val year: Number
     abstract val day: Number
 
-    abstract fun part1(input: T): Any
+    abstract fun part1(input: T): Any?
 
-    abstract fun part2(input: T): Any
+    abstract fun part2(input: T): Any?
 
     private fun <T> generateInput(fn: KFunction<*>): T {
         val fileName = (fn.findAnnotation<UseFile>() ?: UseFile("input.txt")).fileName
@@ -32,17 +29,17 @@ abstract class Solution<T> {
         return ret as T
     }
 
-    public fun runDay1(): Any {
+    public fun runDay1(): Any? {
         val fn = this::class.functions.find {
             it.name == "part1"
         } ?: throw RuntimeException("part1 not found")
-        return fn.call(this, this.generateInput(fn))!!
+        return fn.call(this, this.generateInput(fn))
     }
 
-    public fun runDay2(): Any {
+    public fun runDay2(): Any? {
         val fn = this::class.functions.find {
             it.name == "part2"
         } ?: throw RuntimeException("part2 not found")
-        return fn.call(this, this.generateInput(fn))!!
+        return fn.call(this, this.generateInput(fn))
     }
 }
