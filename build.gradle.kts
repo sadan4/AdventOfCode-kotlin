@@ -28,7 +28,7 @@ kotlin {
 }
 
 application {
-    mainClass.set("zip.sadan.MainKt")
+    if (System.getProperty("DEBUG") != null) mainClass.set("zip.sadan.DebugKt") else mainClass.set("zip.sadan.MainKt")
 }
 
 tasks.withType<JavaExec> {

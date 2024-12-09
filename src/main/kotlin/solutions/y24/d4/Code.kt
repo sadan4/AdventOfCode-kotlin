@@ -2,12 +2,12 @@ package zip.sadan.solutions.y24.d4
 
 import util.input.UseFile
 import zip.sadan.Solution
-import zip.sadan.util.array.Coord
+import zip.sadan.util.twoD.Coord
 import zip.sadan.util.array.Fill
 import zip.sadan.util.array.mult
 import zip.sadan.util.array.window2d
-import zip.sadan.util.twoD.Direction
-import zip.sadan.util.twoD.Radius
+import zip.sadan.util.direction.Direction
+import zip.sadan.util.twoD.SquareGrid
 
 private fun List<String>.toBufferedCharArray(bufferSize: Int, bufferChar: Char): List<List<Char>> =
     Fill(this.size + (bufferSize * 2), '0').mult(bufferSize) + this
@@ -42,7 +42,7 @@ class Code : Solution<List<String>>() {
             }
             .map {
                 it
-                    .map(::Radius)
+                    .map(::SquareGrid)
                     .map {
                         Direction
                             .entries
@@ -82,7 +82,7 @@ class Code : Solution<List<String>>() {
             .map {
                 val diagonals = arrayOf(Pair(Direction.NE, Direction.SW), Pair(Direction.NW, Direction.SE))
                 it
-                    .map(::Radius)
+                    .map(::SquareGrid)
                     .map {
                         diagonals
                             .map { (first, second) ->

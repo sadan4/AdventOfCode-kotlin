@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="" />
+    <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Debug.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/IEnumValue.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/debug/ColoredString.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/debug/ITerminalCode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/debug/TerminalCode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/Diagonal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/Direction.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/IHasCardinal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/IHasShift.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/Linear.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/Quadrant.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/pair/all.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/pair/any.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d4/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d4/Code.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/Coord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/window2d.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/array/window2d.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Radius.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/SquareGrid.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,28 +81,38 @@
       <list>
         <option value="Kotlin Script" />
         <option value="Kotlin Annotation" />
-        <option value="Kotlin Interface" />
         <option value="Class" />
-        <option value="Kotlin Class" />
+        <option value="Kotlin Enum" />
+        <option value="Enum" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "sadan4"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sadan4&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sadan4/AdventOfCode-kotlin.git",
-    "accountId": "360215c2-e478-4822-906a-16047a3715ef"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:sadan4/AdventOfCode-kotlin.git&quot;,
+    &quot;accountId&quot;: &quot;360215c2-e478-4822-906a-16047a3715ef&quot;
   }
-}]]></component>
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.0.21/4789c95c3f2037f6689c0786baf1684275734ad3/kotlin-stdlib-2.0.21-sources.jar!/jvmMain/kotlin/Collections.kt" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.0.21/4789c95c3f2037f6689c0786baf1684275734ad3/kotlin-stdlib-2.0.21-sources.jar!/jvmMain/kotlin/Iterator.kt" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/jbr-21.0.5/lib/src.zip!/java.base/java/util/Collection.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="hvadmkfd" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -88,10 +123,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.Build AdventOfCode-kotlin.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Debug.executor&quot;: &quot;Debug&quot;,
     &quot;Gradle.aoc [downloadInput].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.aoc [run].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.aoc d4.executor&quot;: &quot;Debug&quot;,
     &quot;Gradle.aoc d5.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin script (Beta).scratch_1.kts.executor&quot;: &quot;Debug&quot;,
     &quot;NIXITCH_NIXPKGS_CONFIG&quot;: &quot;/etc/nix/nixpkgs-config.nix&quot;,
     &quot;NIXITCH_NIX_CONF_DIR&quot;: &quot;&quot;,
     &quot;NIXITCH_NIX_OTHER_STORES&quot;: &quot;&quot;,
@@ -101,6 +139,7 @@
     &quot;NIXITCH_NIX_USER_PROFILE_DIR&quot;: &quot;/nix/var/nix/profiles/per-user/meyer&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/meyer/dev/kt/aoc/src/main/kotlin/solutions/y24/d5&quot;,
@@ -109,13 +148,17 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Kotlin&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/nix/store/8gp151mpyrp1f7k6gfb07v6lpj0hgn01-idea-ultimate-2024.1.4/idea-ultimate/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;kotlin&quot;
+    ],
     &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;/home/meyer/.gradle&quot;
+      &quot;C:\\Users\\meyer\\.gradle&quot;
     ]
   }
 }</component>
@@ -130,10 +173,35 @@
       <recent name="$PROJECT_DIR$/scripts" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="util" />
+      <recent name="util.twoD" />
+      <recent name="util.direction" />
       <recent name="solutions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.aoc d5">
+  <component name="RunManager" selected="Gradle.Debug">
+    <configuration name="Debug" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-DDEBUG" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="aoc [downloadInput]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -202,6 +270,7 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.aoc d5" />
+      <item itemvalue="Gradle.Debug" />
       <item itemvalue="Gradle.aoc [downloadInput]" />
     </list>
     <recent_temporary>
@@ -298,7 +367,10 @@
       <workItem from="1733623408856" duration="14268000" />
       <workItem from="1733683110358" duration="13630000" />
       <workItem from="1733720477180" duration="444000" />
-      <workItem from="1733754509877" duration="157000" />
+      <workItem from="1733754509877" duration="237000" />
+      <workItem from="1733755479518" duration="1691000" />
+      <workItem from="1733757648744" duration="21244000" />
+      <workItem from="1733785579210" duration="2190000" />
     </task>
     <servers />
   </component>
@@ -326,17 +398,19 @@
         <line-breakpoint enabled="true" type="kotlin-line">
           <condition expression="y2==146" language="kotlin" />
           <url>file://$PROJECT_DIR$/src/main/kotlin/util/array/window2d.kt</url>
-          <line>6</line>
+          <line>8</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt</url>
+          <line>27</line>
+          <properties class="zip.sadan.util.twoD.RectangularGrid" method="formatHlPrint">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="GradleRunConfiguration">
-        <watch expression="test.map { it.middle() }.sum()" language="kotlin" />
-        <watch expression="test.map { it.middle() }" language="kotlin" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

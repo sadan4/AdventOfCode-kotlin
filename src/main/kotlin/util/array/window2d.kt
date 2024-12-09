@@ -1,5 +1,7 @@
 package zip.sadan.util.array
 
+import zip.sadan.util.twoD.Coord
+
 
 fun <T> List<List<T>>.window2d(upperLeft: Coord, bottomRight: Coord): List<List<T>> {
     val (x1, y1) = upperLeft

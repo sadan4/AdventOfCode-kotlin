@@ -1,12 +1,10 @@
 package zip.sadan.util.twoD
 
 import zip.sadan.util.array.isSquare
+import zip.sadan.util.direction.Direction
 
-enum class Direction {
-    N, NE, E, SE, S, SW, W, NW
-}
 
-class Radius<T>(private var arr: List<List<T>>) {
+class SquareGrid<T>(private var arr: List<List<T>>) {
     public override fun toString(): String {
         return arr.joinToString("\n") { it.joinToString("") }
     }
