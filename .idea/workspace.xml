@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d5/roz.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d5/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/array/firstUniq.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/array/middle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/array/splitMapInt.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/array/splitMapSplit.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d1/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d1/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d2/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d2/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d3/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d3/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d4/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d4/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/input/UseFile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/input/UseFile.kt" afterDir="false" />
-    </list>
+    <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,6 +66,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "sadan4"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sadan4/AdventOfCode-kotlin.git",
+    "accountId": "360215c2-e478-4822-906a-16047a3715ef"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -216,8 +213,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19416.15" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19416.15" />
       </set>
     </attachedChunks>
   </component>
@@ -301,6 +298,7 @@
       <workItem from="1733623408856" duration="14268000" />
       <workItem from="1733683110358" duration="13630000" />
       <workItem from="1733720477180" duration="444000" />
+      <workItem from="1733754509877" duration="3000" />
     </task>
     <servers />
   </component>
