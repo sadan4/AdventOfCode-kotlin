@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/minky.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/Cycle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/array/getCoord.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/array/getCoordJava.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Grid.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/template" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/template" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Debug.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Debug.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/debug/ColoredString.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/debug/ColoredString.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/debug/guhhh.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/debug/debug.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -402,11 +387,6 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt</url>
           <line>46</line>
           <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/Code.kt</url>
-          <line>101</line>
-          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
