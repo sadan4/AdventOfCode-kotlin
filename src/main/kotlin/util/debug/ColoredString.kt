@@ -18,6 +18,7 @@ class ColoredString(private val str: String) {
      */
     public fun setForegroundColor(r: Int, g: Int, b: Int): ColoredString {
         addCode(TerminalCode.SET_FOREGROUND_COLOR)
+        codes.add("2")
         codes.add(r.toString())
         codes.add(g.toString())
         codes.add(b.toString())
@@ -26,6 +27,7 @@ class ColoredString(private val str: String) {
 
     public fun setBackgroundColor(r: Int, g: Int, b: Int): ColoredString {
         addCode(TerminalCode.SET_BACKGROUND_COLOR)
+        codes.add("2")
         codes.add(r.toString())
         codes.add(g.toString())
         codes.add(b.toString())

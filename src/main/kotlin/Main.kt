@@ -37,7 +37,7 @@ fun main() {
         e.printStackTrace()
     }
     println("Part 1 time: ${d1time?.div(1e6) ?: "null"}ms")
-    println("Part 1: ${day1ans ?: "null"}")
+    println("Part 1: \n${day1ans ?: "null"}")
     println("Part 2 time: ${d2time?.div(1e6) ?: "null"}ms")
-    println("Part 2: ${day2ans ?: "null"}")
+    println("Part 2: \n${day2ans ?: "null"}")
 }
