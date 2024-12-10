@@ -3,33 +3,38 @@ package zip.sadan.util.direction
 import zip.sadan.util.twoD.Coord
 
 enum class Direction : IHasShift {
+
     N {
-        override fun toShift(): Coord = Coord(0, 1)
+        private val shift = Coord(0, 1)
+        override fun toShift(): Coord = shift
     },
     NE {
-        override fun toShift(): Coord = Coord(1, 1)
+        private val shift = Coord(1, 1)
+        override fun toShift(): Coord = shift
     },
     E {
-        override fun toShift(): Coord = Coord(1, 0)
+        private val shift = Coord(1, 0)
+        override fun toShift(): Coord = shift
     },
     SE {
-        override fun toShift(): Coord = Coord(1, -1)
+        private val shift = Coord(1, -1)
+        override fun toShift(): Coord = shift
     },
     S {
-        override fun toShift(): Coord = Coord(0, -1)
+        private val shift = Coord(0, -1)
+        override fun toShift(): Coord = shift
     },
     SW {
-        override fun toShift(): Coord = Coord(-1, -1)
+        private val shift = Coord(-1, -1)
+        override fun toShift(): Coord = shift
     },
     W {
-        override fun toShift(): Coord = Coord(-1, 0)
+        private val shift = Coord(-1, 0)
+        override fun toShift(): Coord = shift
     },
     NW {
-        override fun toShift(): Coord = Coord(-1, 1)
+        private val shift = Coord(-1, 1)
+        override fun toShift(): Coord = shift
     };
-}
-
-fun abc(): Unit {
-    Direction.NW.name
 }
 

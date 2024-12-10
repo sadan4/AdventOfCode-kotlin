@@ -1,6 +1,5 @@
 package zip.sadan.solutions.y24.d6
 
-import util.input.UseFile
 import zip.sadan.Solution
 import zip.sadan.util.Cycle
 import zip.sadan.util.direction.Linear
@@ -20,37 +19,47 @@ class Code : Solution<TInput>() {
     override val day: Number = 6
     private fun p1Helper(grid: RectangularGrid<Char>): Set<Coord> {
         val seen = hashSetOf<Coord>()
+
         var curPos = grid.getPosOf('^')!!
         val r = makeRotation()
         while (true) {
             val dir = r.use()
             val line = grid.coordsUntil(curPos, dir, '#')
             if (line.isEmpty()) break
-            seen.addAll(line)
-            curPos = line.last()
+            for (c in line) {
+                seen.add(c)
+                if (!line.hasNext()) {
+                    curPos = c
+                }
+            }
             if (grid.isOnEdge(curPos))
                 break
         }
         return seen
     }
 
-    @UseFile("./minky.txt")
     override fun part1(input: TInput): Any? {
         return p1Helper(RectangularGrid(makeLines(input).map { it.toCharArray().toList() })).size
     }
 
-    private fun p2Helper(grid: RectangularGrid<Char>): Boolean {
-        val seen = hashSetOf<Pair<Linear, Coord>>()
-        var curPos = grid.getPosOf('^')!!
+    private fun p2Helper(grid: RectangularGrid<Char>, extra: Coord, startingPos: Coord): Boolean {
+        val seen = HashSet<Pair<Linear, Coord>>(8192)
+        var curPos = startingPos
         val r = makeRotation()
         while (true) {
             val dir = r.use()
-            val line = grid.coordsUntil(curPos, dir, '#')
-            if (line.isEmpty()) break
-            line.forEach {
-                if (!seen.add(dir to it)) {
-                    return true
+            val line = grid.coordsUntil(curPos, dir) {
+                if (grid[it] == '#' || it == extra) {
+                    return@coordsUntil true
+                } else {
+                    if(!seen.add(dir to it)) {
+                        return true
+                    }
+                    return@coordsUntil false
                 }
+            }
+            if (!line.hasNext()) {
+                continue
             }
             curPos = line.last()
             if (grid.isOnEdge(curPos))
@@ -59,22 +68,21 @@ class Code : Solution<TInput>() {
         return false
     }
 
-    @UseFile("./minky.txt")
     override fun part2(input: TInput): Any? {
         val grid = RectangularGrid(makeLines(input).map { it.toCharArray().toList() })
         val startingPos = grid.getPosOf('^')!!
-        val workingLoops = mutableListOf<Coord>()
+        var i = 0
         for (c in p1Helper(grid)) {
             val char = grid[c];
             if (c == startingPos || char == '#') {
                 continue
             }
-            val modifiedGrid = grid.clone()
-            modifiedGrid.replace(c, '#')
-            if (p2Helper(modifiedGrid)) {
-                workingLoops.add(c)
+
+            if (p2Helper(grid, c, startingPos)) {
+                i++
             }
         }
-        return "${workingLoops.size}-${workingLoops.toSet().size}"
+
+        return "${i}"
     }
 }

@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/CoordIterator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Debug.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Debug.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/Code.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/direction/Diagonal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/Diagonal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/direction/Direction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/Direction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/direction/IHasCardinal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/IHasCardinal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/direction/Linear.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/Linear.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +102,10 @@
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.0.21/4789c95c3f2037f6689c0786baf1684275734ad3/kotlin-stdlib-2.0.21-sources.jar!/jvmMain/kotlin/Iterator.kt" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.jdks/jbr-21.0.5/lib/src.zip!/java.base/java/util/Collection.java" root0="SKIP_INSPECTION" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="hvadmkfd" />
   </component>
@@ -110,7 +128,7 @@
     "Gradle.aoc [run].executor": "Run",
     "Gradle.aoc d4.executor": "Debug",
     "Gradle.aoc d5.executor": "Debug",
-    "Gradle.aoc d6.executor": "Debug",
+    "Gradle.aoc d6.executor": "Profiler#1",
     "Kotlin script (Beta).scratch_1.kts.executor": "Debug",
     "NIXITCH_NIXPKGS_CONFIG": "/etc/nix/nixpkgs-config.nix",
     "NIXITCH_NIX_CONF_DIR": "",
@@ -132,8 +150,8 @@
     "nodejs_package_manager_path": "npm",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.folding",
-    "ts.external.directory.path": "/nix/store/8gp151mpyrp1f7k6gfb07v6lpj0hgn01-idea-ultimate-2024.1.4/idea-ultimate/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.7\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -141,7 +159,7 @@
       "kotlin"
     ],
     "kotlin-gradle-user-dirs": [
-      "/home/meyer/.gradle"
+      "C:\\Users\\meyer\\.gradle"
     ]
   }
 }]]></component>
@@ -354,6 +372,7 @@
       <workItem from="1733755479518" duration="1691000" />
       <workItem from="1733757648744" duration="21244000" />
       <workItem from="1733785579210" duration="2190000" />
+      <workItem from="1733863502341" duration="2463000" />
     </task>
     <servers />
   </component>
@@ -385,16 +404,11 @@
         <line-breakpoint enabled="true" type="kotlin-line">
           <condition expression="c.y == 130" language="kotlin" />
           <url>file://$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt</url>
-          <line>46</line>
+          <line>57</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="GradleRunConfiguration">
-        <watch expression="println(grid)" language="kotlin" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -7,6 +7,7 @@ import kotlin.reflect.KFunction
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.functions
 import kotlin.reflect.jvm.jvmErasure
+import kotlin.system.measureNanoTime
 
 abstract class Solution<T> {
     abstract val year: Number
@@ -29,17 +30,27 @@ abstract class Solution<T> {
         return ret as T
     }
 
-    public fun runDay1(): Any? {
+    public fun runDay1(): Pair<Long, Any?> {
         val fn = this::class.functions.find {
             it.name == "part1"
         } ?: throw RuntimeException("part1 not found")
-        return fn.call(this, this.generateInput(fn))
+        val args = this.generateInput<Any>(fn)
+        var ret: Any?
+        val time = measureNanoTime {
+            ret = fn.call(this, args)
+        }
+        return time to ret
     }
 
-    public fun runDay2(): Any? {
+    public fun runDay2(): Pair<Long, Any?> {
         val fn = this::class.functions.find {
             it.name == "part2"
         } ?: throw RuntimeException("part2 not found")
-        return fn.call(this, this.generateInput(fn))
+        val args = this.generateInput<Any>(fn)
+        var ret: Any?
+        val time = measureNanoTime {
+            ret = fn.call(this, args)
+        }
+        return time to ret
     }
 }

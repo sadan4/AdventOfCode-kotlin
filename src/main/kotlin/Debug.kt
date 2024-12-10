@@ -13,5 +13,5 @@ fun main() {
         }
     }
     val gr = RectangularGrid(g, Coord.ZERO)
-    println(gr.formatHlPrint(*gr.coordsOfLine(Coord(9, 6), Direction.SW).toTypedArray()))
+    println(gr.formatHlPrint(*gr.coordsOfLine(Coord(9, 6), Direction.SW).toList().toTypedArray()))
 }

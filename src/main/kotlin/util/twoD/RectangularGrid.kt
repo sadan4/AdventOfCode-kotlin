@@ -15,6 +15,17 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
 
     constructor(arr: TGrid<T>) : this(arr, Coord(0, 0))
 
+    public val height
+        get() = arr.size
+
+    public val width
+        get() = arr[0].size
+
+    init {
+        require(arr.isNotEmpty()) { "Grid must have at least one row" }
+        require(arr[0].isNotEmpty()) { "Grid must have at least one column" }
+    }
+
     private val arr: MutableList<MutableList<T>> = arr.map {
         it.toMutableList()
     }.toMutableList()
@@ -53,10 +64,6 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
         }
     }
 
-    init {
-        require(arr.isNotEmpty()) { "Grid must have at least one row" }
-        require(arr[0].isNotEmpty()) { "Grid must have at least one column" }
-    }
 
     public val rootItem: T
         get() = arr[rootCoord.x][rootCoord.y]
@@ -64,11 +71,6 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
     public val rootChord
         get() = rootCoord
 
-    public val height
-        get() = arr.size
-
-    public val width
-        get() = arr[0].size
 
     public fun isSquare(): Boolean = arr.isSquare()
 
@@ -81,17 +83,15 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
      *
      * the returned coords are inclusive
      */
-    public fun coordsOfLine(at: Coord, direction: IHasShift): List<Coord> {
+    fun coordsOfLine(at: Coord, direction: IHasShift): Iterable<Coord> {
         val (x, y) = at
         val (sx, sy) = direction.toShift()
         val height = this.height - 1.0;
         val width = this.width - 1.0
-        return (at..(at + Coord(
+        return at lineTo (at + Coord(
             (sx * abs(x - ((sx * width) / 2) - (width / 2))).toInt(),
             (sy * abs(y - ((sy * height) / 2) - (height / 2))).toInt()
-        ))).toList().map {
-            it + at
-        }
+        ))
     }
 
     /**
@@ -109,7 +109,7 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
         return (at..cur).toList()
     }
 
-    fun coordsUntil(at: Coord, direction: IHasShift, el: T): List<Coord> = coordsUntil(at, direction) {
+    fun coordsUntil(at: Coord, direction: IHasShift, el: T): CoordIterator = coordsUntil(at, direction) {
         arr[it] == el
     }
 
@@ -117,17 +117,18 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
      * doesn't include the one that breaks
      * see: [coordsTo]
      */
-    fun coordsUntil(at: Coord, direction: IHasShift, fn: (Coord) -> Boolean): List<Coord> {
-        var cur = at
+    inline fun coordsUntil(at: Coord, direction: IHasShift, fn: (Coord) -> Boolean): CoordIterator {
+        var cur: Coord = at
         for (c in coordsOfLine(at, direction)) {
             if (fn(c)) {
                 break
             }
             cur = c
         }
-        return (at..cur).toList().map {
-            it + at
-        }
+        return at lineTo cur
+//        return (at..cur).map {
+//            it + at
+//        }
     }
 
     fun replace(at: Coord, value: T) = arr.set(at, value)

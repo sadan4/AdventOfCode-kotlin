@@ -16,28 +16,22 @@ fun main() {
         .forName("zip.sadan.solutions.y$YEAR.d$DAY.Code")
         .getDeclaredConstructor()
         .newInstance() as Solution<*>
-    var d1time: Long? = null
-    var day1ans: Any? = null;
-    var d2time: Long? = null
-    var day2ans: Any? = null;
+    lateinit var d1Ret: Pair<Long, Any?>
+    lateinit var d2Ret: Pair<Long, Any?>
     try {
-         d1time = measureNanoTime {
-            day1ans = today.runDay1()
-        }
+            d1Ret = today.runDay1()
     } catch (e: Exception) {
         println("Error running day 1")
         e.printStackTrace()
     }
     try {
-        d2time = measureNanoTime {
-            day2ans = today.runDay2()
-        }
+            d2Ret = today.runDay2()
     } catch (e: Exception) {
         println("Error running day 2")
         e.printStackTrace()
     }
-    println("Part 1 time: ${d1time?.div(1e6) ?: "null"}ms")
-    println("Part 1: \n${day1ans ?: "null"}")
-    println("Part 2 time: ${d2time?.div(1e6) ?: "null"}ms")
-    println("Part 2: \n${day2ans ?: "null"}")
+    println("Part 1 time: ${d1Ret.first.div(1e6)}ms")
+    println("Part 1: \n${d1Ret.second ?: "null"}")
+    println("Part 2 time: ${d2Ret.first.div(1e6)}ms")
+    println("Part 2: \n${d2Ret.second ?: "null"}")
 }

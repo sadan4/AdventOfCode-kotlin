@@ -48,3 +48,4 @@ node_modules
 .env.json
 src/main/kotlin/solutions/y[0-9][0-9]/d[0-9][0-9]/input.txt
 src/main/kotlin/solutions/y[0-9][0-9]/d[0-9]/input.txt
+hs_err_pid*.log
