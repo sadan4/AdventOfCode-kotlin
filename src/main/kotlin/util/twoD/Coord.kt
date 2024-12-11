@@ -5,6 +5,7 @@ import kotlin.collections.ArrayList
 import kotlin.math.abs
 import kotlin.math.sign
 private inline fun closestButNotZero(ox: Int, oy: Int): Int = if (ox == 0 || oy == 0) abs(ox + oy) else Math.min(abs(ox), abs(oy))
+
 class Coord(val x: Int, val y: Int) {
 
     constructor(a: Int) : this(a, a)
@@ -68,7 +69,7 @@ class Coord(val x: Int, val y: Int) {
         return abs(ox / oy) == abs(x / y)
     }
 
-    infix fun lineTo(other: Coord): CoordIterator {
+    infix fun lineTo(other: Coord): CIterator {
         if (!canGoTo(other)) {
             throw IllegalArgumentException("with lineTo, the other coord must be reachable with intervals of 1 from this coord")
         }
@@ -77,14 +78,14 @@ class Coord(val x: Int, val y: Int) {
         val t = closestButNotZero(ox, oy)
         val dx = -ox.sign
         val dy = -oy.sign
-        return object : CoordIterator() {
+        return object : CIterator() {
             private var i = 0
             override fun hasNext(): Boolean = i <= t
             override fun next(): Coord = Coord(x + (i * dx), y + (i++ * dy))
         }
     }
 
-    operator fun rangeTo(other: Coord): CoordIterator {
+    operator fun rangeTo(other: Coord): CIterator {
         if (!canGoTo(other)) {
             throw IllegalArgumentException("with rangeTo, the other coord must be reachable with intervals of 1 from this coord")
         }
@@ -93,14 +94,14 @@ class Coord(val x: Int, val y: Int) {
         val t = closestButNotZero(ox, oy)
         val dx = -ox.sign
         val dy = -oy.sign
-        return object : CoordIterator() {
+        return object : CIterator() {
             private var i = 0
             override fun hasNext(): Boolean = i <= t
             override fun next(): Coord = Coord(i * dx, i++ * dy)
         }
     }
 
-    operator fun rangeUntil(other: Coord): CoordIterator {
+    operator fun rangeUntil(other: Coord): CIterator {
         if (!canGoTo(other)) {
             throw IllegalArgumentException("with rangeUntil, the other coord must be reachable with intervals of 1 from this coord")
         }
@@ -109,7 +110,7 @@ class Coord(val x: Int, val y: Int) {
         val t = closestButNotZero(ox, oy)
         val dx = -ox.sign
         val dy = -oy.sign
-        return object : CoordIterator() {
+        return object : CIterator() {
             private var i = 0
             override fun hasNext(): Boolean = i < t
             override fun next(): Coord = Coord(i * dx, i++ * dy)
@@ -119,7 +120,7 @@ class Coord(val x: Int, val y: Int) {
     /**
      * returns an iterable of all the coords bewteen this one, assuming they made a 2d window
      */
-    infix fun to(bl: Coord): CoordIterator {
+    infix fun to(bl: Coord): CIterator {
         val (ox, oy) = bl
         val toRet = ArrayList<Coord>((x - ox) * (y - oy))
         for(i in x..ox) {
@@ -127,7 +128,7 @@ class Coord(val x: Int, val y: Int) {
                 toRet.add(Coord(i, j))
             }
         }
-        return object : CoordIterator() {
+        return object : CIterator() {
             private var i = x;
             private var j = y;
             override fun hasNext(): Boolean = i <= ox && j <= oy

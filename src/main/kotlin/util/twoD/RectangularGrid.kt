@@ -1,17 +1,17 @@
 package zip.sadan.util.twoD
 
-import util.input.UseFile
 import zip.sadan.util.array.isSquare
 import zip.sadan.util.debug.ColoredString
 import zip.sadan.util.direction.IHasShift
 import zip.sadan.util.array.get;
+import zip.sadan.util.array.lazilyMap
 import zip.sadan.util.array.set;
 import kotlin.math.abs
 
 typealias TGrid<T> = List<List<T>>
 
 private fun Int.abs() = abs(this)
-class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
+class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
 
     constructor(arr: TGrid<T>) : this(arr, Coord(0, 0))
 
@@ -29,6 +29,22 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
     private val arr: MutableList<MutableList<T>> = arr.map {
         it.toMutableList()
     }.toMutableList()
+    override val size: Int
+        get() = width * height
+
+    override fun isEmpty(): Boolean {
+        return false
+    }
+
+    override fun iterator(): Iterator<T> = (Coord.ZERO to Coord(width - 1, height - 1)).lazilyMap {
+        this[it]
+    }
+
+    override fun containsAll(elements: Collection<T>): Boolean = elements.all {
+        this.contains(it)
+    }
+
+    override fun contains(element: T): Boolean = getPosOf(element) != null
 
     override fun toString(): String {
         var longest = 0

@@ -1,10 +1,13 @@
 package zip.sadan.util.twoD
 
-abstract class CoordIterator(): Iterator<Coord>, Iterable<Coord> {
+
+public typealias CIterator = CoordIterator<Coord>
+
+abstract class CoordIterator<in T>(): Iterator<@UnsafeVariance T>, Iterable<@UnsafeVariance T> {
     companion object {
-        val empty = object: CoordIterator() {
-            override fun hasNext(): Boolean = false
-            override fun next(): Coord = throw NoSuchElementException()
+        val empty: CoordIterator<Any> = object: CoordIterator<Any>() {
+            override fun hasNext() = false
+            override fun next() = throw NoSuchElementException()
         }
     }
 
@@ -12,7 +15,7 @@ abstract class CoordIterator(): Iterator<Coord>, Iterable<Coord> {
     fun isNotEmpty(): Boolean = !isEmpty()
     abstract override fun hasNext(): Boolean
 
-    abstract override fun next(): Coord
+    abstract override fun next(): @UnsafeVariance T
 
-    override fun iterator(): Iterator<Coord> = this
+    override fun iterator(): Iterator<@UnsafeVariance T> = this
 }
