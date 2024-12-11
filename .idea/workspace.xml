@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/array/plusHead.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/old.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +63,8 @@
         <option value="Kotlin Enum" />
         <option value="Enum" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -360,6 +360,7 @@
       <workItem from="1733785579210" duration="2190000" />
       <workItem from="1733863502341" duration="2463000" />
       <workItem from="1733866436299" duration="522000" />
+      <workItem from="1733883582425" duration="3457000" />
     </task>
     <servers />
   </component>
@@ -388,12 +389,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="42" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <condition expression="c.y == 130" language="kotlin" />
-          <url>file://$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt</url>
-          <line>66</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
