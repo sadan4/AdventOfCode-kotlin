@@ -126,9 +126,6 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) {
             cur = c
         }
         return at lineTo cur
-//        return (at..cur).map {
-//            it + at
-//        }
     }
 
     fun replace(at: Coord, value: T) = arr.set(at, value)
