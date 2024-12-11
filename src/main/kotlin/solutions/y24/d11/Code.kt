@@ -26,7 +26,7 @@ class Code : Solution<TInput>() {
                     return@flatMap listOf(1L)
                 val t = it.toString()
                 if (t.length % 2 == 0) {
-                    return@flatMap t.chunked(t.length / 2).map { it.toLong() }
+                    return@flatMap listOf(t.take(t.length / 2).toLong(), t.drop(t.length / 2).toLong())
                 }
                 return@flatMap listOf(it * 2024L)
             }
