@@ -74,4 +74,3 @@ class Code : Solution<TInput>() {
         }
         return res
     }
-}
