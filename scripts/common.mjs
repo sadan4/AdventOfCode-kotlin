@@ -31,7 +31,7 @@ export function getToday() {
 
     return {
         year: d.getFullYear().toString().substring(2),
-        day: (d.getDay() + 1).toString()
+        day: (d.getDate()).toString()
     }
 }
 
