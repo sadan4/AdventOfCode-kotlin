@@ -6,6 +6,7 @@ import zip.sadan.util.direction.IHasShift
 import zip.sadan.util.array.get;
 import zip.sadan.util.array.lazilyMap
 import zip.sadan.util.array.set;
+import java.util.Stack
 import kotlin.math.abs
 
 typealias TGrid<T> = List<List<T>>
@@ -38,6 +39,28 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
 
     override fun iterator(): Iterator<T> = (Coord.ZERO to Coord(width - 1, height - 1)).lazilyMap {
         this[it]
+    }
+
+    fun coords(): CIterator = (Coord.ZERO to Coord(width - 1, height - 1))
+
+    fun contigiousLinear(start: Coord) = contigiousLinear(start) {
+        it == this[start]
+    }
+
+    fun contigiousLinear(start: Coord, eq: (T) -> Boolean): HashSet<Coord> {
+        val startingVal = this[start]
+        val valid = hashSetOf(start)
+        val toVisit = Stack<Coord>()
+        toVisit.addAll(start.linearNeighbors())
+        while(toVisit.isNotEmpty()) {
+            val cur = toVisit.pop()
+            if (cur in valid) continue
+            if (cur !in this) continue
+            if (!eq(this[cur])) continue
+            valid.add(cur)
+            toVisit.addAll(cur.linearNeighbors())
+        }
+        return valid
     }
 
     override fun containsAll(elements: Collection<T>): Boolean = elements.all {
@@ -125,7 +148,7 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
         return (at..cur).toList()
     }
 
-    fun coordsUntil(at: Coord, direction: IHasShift, el: T): CoordIterator = coordsUntil(at, direction) {
+    fun coordsUntil(at: Coord, direction: IHasShift, el: T): CIterator = coordsUntil(at, direction) {
         arr[it] == el
     }
 
@@ -133,7 +156,7 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
      * doesn't include the one that breaks
      * see: [coordsTo]
      */
-    inline fun coordsUntil(at: Coord, direction: IHasShift, fn: (Coord) -> Boolean): CoordIterator {
+    inline fun coordsUntil(at: Coord, direction: IHasShift, fn: (Coord) -> Boolean): CIterator {
         var cur: Coord = at
         for (c in coordsOfLine(at, direction)) {
             if (fn(c)) {
@@ -193,6 +216,12 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
 
     fun clone(): RectangularGrid<T> {
         return RectangularGrid(arr.map { it.toList() }, rootCoord)
+    }
+
+    public operator fun contains(c: Coord): Boolean{
+        if (c.x < 0 || c.y < 0) return false
+        if (c.x >= width || c.y >= height) return false
+        return true
     }
 
     public operator fun get(index: Int): List<T> = arr[index]

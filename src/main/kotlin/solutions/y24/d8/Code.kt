@@ -12,6 +12,7 @@ class Code : Solution<TInput>() {
 
     override fun part1(input: TInput): Any? {
         val grid = RectangularGrid<Char>(input.map { it.toCharArray().toList() })
+        TODO()
     }
 
     override fun part2(input: TInput): Any? {

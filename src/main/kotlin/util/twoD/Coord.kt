@@ -1,5 +1,7 @@
 package zip.sadan.util.twoD
 
+import zip.sadan.util.direction.Diagonal
+import zip.sadan.util.direction.Linear
 import zip.sadan.util.direction.Quadrant
 import kotlin.collections.ArrayList
 import kotlin.math.abs
@@ -17,6 +19,24 @@ class Coord(val x: Int, val y: Int) {
 
     operator fun component1(): Int = x
     operator fun component2(): Int = y
+
+    fun linearNeighbors(): List<Coord> {
+        return listOf(
+            this + Linear.N.toShift(),
+            this + Linear.S.toShift(),
+            this + Linear.E.toShift(),
+            this + Linear.W.toShift()
+        )
+    }
+    fun diagonalNeighbors(): List<Coord> {
+        return listOf(
+            this + Diagonal.NE.toShift(),
+            this + Diagonal.NW.toShift(),
+            this + Diagonal.SE.toShift(),
+            this + Diagonal.SW.toShift()
+        )
+    }
+    fun neighbors(): List<Coord> = linearNeighbors() + diagonalNeighbors()
 
     fun toPair(): Pair<Int, Int> = Pair(x, y)
 
@@ -133,7 +153,12 @@ class Coord(val x: Int, val y: Int) {
             private var j = y;
             override fun hasNext(): Boolean = i <= ox && j <= oy
 
-            override fun next(): Coord = Coord(i++, j++)
+            override fun next(): Coord = if (j == oy) {
+                j = y
+                Coord(i++, oy)
+            } else {
+                Coord(i, j++)
+            }
         }
     }
 

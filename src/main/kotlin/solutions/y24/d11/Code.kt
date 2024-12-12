@@ -26,7 +26,14 @@ class Code : Solution<TInput>() {
                     return@flatMap listOf(1L)
                 val t = it.toString()
                 if (t.length % 2 == 0) {
-                    return@flatMap listOf(t.take(t.length / 2).toLong(), t.drop(t.length / 2).toLong())
+                    return@flatMap listOf(
+                        t
+                            .take(t.length / 2)
+                            .toLong(),
+                        t
+                            .drop(t.length / 2)
+                            .toLong()
+                    )
                 }
                 return@flatMap listOf(it * 2024L)
             }
@@ -36,14 +43,18 @@ class Code : Solution<TInput>() {
     }
 
     override fun part1(input: TInput): Any? {
-        val nums = input.removeSuffix("\n").split(" ").map {
-            it.toLong()
-        }
+        val nums = input
+            .removeSuffix("\n")
+            .split(" ")
+            .map {
+                it.toLong()
+            }
         val res = nums.sumOf {
             run25(it).size
         }
         return res
     }
+
     private fun run50(input: Long): Long {
         if (cache50.containsKey(input)) {
             return cache50[input]!!
@@ -56,6 +67,7 @@ class Code : Solution<TInput>() {
         cache50[input] = sum
         return sum
     }
+
     private fun run75(input: Long): Long {
 
         val cur = run25(input);
@@ -65,12 +77,17 @@ class Code : Solution<TInput>() {
         }
         return res
     }
+
     override fun part2(input: TInput): Any? {
-        val nums = input.removeSuffix("\n").split(" ").map {
-            it.toLong()
-        }
+        val nums = input
+            .removeSuffix("\n")
+            .split(" ")
+            .map {
+                it.toLong()
+            }
         val res = nums.sumOf {
             run75(it)
         }
         return res
     }
+}
