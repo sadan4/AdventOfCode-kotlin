@@ -37,7 +37,11 @@ abstract class Solution<T> {
         val args = this.generateInput<Any>(fn)
         var ret: Any?
         val time = measureNanoTime {
-            ret = fn.call(this, args)
+            try {
+                ret = fn.call(this, args)
+            } catch (e: Throwable) {
+                ret = "Error running day 1:\n${e.stackTraceToString()}"
+            }
         }
         return time to ret
     }
@@ -49,7 +53,11 @@ abstract class Solution<T> {
         val args = this.generateInput<Any>(fn)
         var ret: Any?
         val time = measureNanoTime {
-            ret = fn.call(this, args)
+            try {
+                ret = fn.call(this, args)
+            } catch (e: Throwable) {
+                ret = "Error running day 2:\n${e.stackTraceToString()}"
+            }
         }
         return time to ret
     }

@@ -154,11 +154,15 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
 
     /**
      * doesn't include the one that breaks
+     *
+     * includes [at]
+     *
      * see: [coordsTo]
      */
     inline fun coordsUntil(at: Coord, direction: IHasShift, fn: (Coord) -> Boolean): CIterator {
         var cur: Coord = at
         for (c in coordsOfLine(at, direction)) {
+            if(c !in this) break
             if (fn(c)) {
                 break
             }
