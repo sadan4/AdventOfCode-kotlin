@@ -2,6 +2,7 @@ package zip.sadan.solutions.y24.d6
 
 import zip.sadan.Solution
 import zip.sadan.util.Cycle
+import zip.sadan.util.debug.Solved
 import zip.sadan.util.direction.Linear
 import zip.sadan.util.input.makeLines
 import zip.sadan.util.twoD.Coord
@@ -38,6 +39,7 @@ class Code : Solution<TInput>() {
         return seen
     }
 
+    @Solved("4977")
     override fun part1(input: TInput): Any? {
         return p1Helper(RectangularGrid(makeLines(input).map { it.toCharArray().toList() })).size
     }
@@ -68,6 +70,7 @@ class Code : Solution<TInput>() {
         return false
     }
 
+    @Solved("1729")
     override fun part2(input: TInput): Any? {
         val grid = RectangularGrid(makeLines(input).map { it.toCharArray().toList() })
         val startingPos = grid.getPosOf('^')!!

@@ -3,6 +3,7 @@ package zip.sadan.solutions.y24.d2
 import zip.sadan.Solution
 import zip.sadan.util.array.dropOne
 import zip.sadan.util.array.toPair
+import zip.sadan.util.debug.Solved
 import zip.sadan.util.input.numbers
 
 private fun List<Int>.isValid(): Boolean {
@@ -20,12 +21,14 @@ class Code : Solution<List<String>>() {
     override val year: Number = 24
     override val day: Number = 2
 
+    @Solved("442")
     override fun part1(input: List<String>): Any? = input
         .numbers()
         .count {
             it.isValid()
         }
 
+    @Solved("493")
     override fun part2(input: List<String>): Any? = input
         .numbers()
         .count {

@@ -3,6 +3,7 @@ package zip.sadan.solutions.y24.d7
 import zip.sadan.Solution
 import zip.sadan.util.array.addHead
 import zip.sadan.util.array.toPair
+import zip.sadan.util.debug.Solved
 
 typealias TInput = List<String>
 
@@ -44,6 +45,7 @@ class Code : Solution<TInput>() {
         error("Should not reach here")
     }
 
+    @Solved("538191549061")
     override fun part1(input: TInput): Any? {
         val exprs = input.map {
             with(it.split(":").toPair()) {
@@ -95,6 +97,7 @@ class Code : Solution<TInput>() {
         error("Should not reach here")
     }
 
+    @Solved("34612812972206")
     override fun part2(input: TInput): Any? {
         val exprs = input.map {
             with(it.split(":").toPair()) {

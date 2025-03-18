@@ -6,6 +6,7 @@ import zip.sadan.util.twoD.Coord
 import zip.sadan.util.array.Fill
 import zip.sadan.util.array.mult
 import zip.sadan.util.array.window2d
+import zip.sadan.util.debug.Solved
 import zip.sadan.util.direction.Direction
 import zip.sadan.util.twoD.SquareGrid
 
@@ -24,6 +25,7 @@ class Code : Solution<List<String>>() {
     override val year: Number = 24
     override val day: Number = 4
 
+    @Solved("2344")
     override fun part1(input: List<String>): Any? {
         val mappedInput = input.toBufferedCharArray(3, '0')
         return mappedInput
@@ -61,6 +63,7 @@ class Code : Solution<List<String>>() {
             }
     }
 
+    @Solved("1815")
     @UseFile("input.txt")
     override fun part2(input: List<String>): Any? {
         val radius = 1

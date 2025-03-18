@@ -1,8 +1,10 @@
 package zip.sadan
 
 import util.input.UseFile
+import zip.sadan.util.debug.Solved
 import zip.sadan.util.input.makeLines
 import java.io.File
+import kotlin.math.exp
 import kotlin.reflect.KFunction
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.functions
@@ -30,6 +32,8 @@ abstract class Solution<T> {
         return ret as T
     }
 
+    public var didDay1Fail: String = "NOT_RUN";
+
     public fun runDay1(): Pair<Long, Any?> {
         val fn = this::class.functions.find {
             it.name == "part1"
@@ -39,12 +43,27 @@ abstract class Solution<T> {
         val time = measureNanoTime {
             try {
                 ret = fn.call(this, args)
+                try {
+                    val expected = fn.findAnnotation<Solved>()?.answer;
+                    if (expected != null) {
+                        if (ret?.toString() != expected) {
+                            didDay1Fail = "Expected $expected, but got ${ret?.toString()}";
+                        } else {
+                            didDay1Fail = "OK"
+                        }
+                    }
+                } catch (e: Throwable) {
+                    ret = "Error checking day 1:\n${e.stackTraceToString()}"
+                    didDay1Fail = "ERR";
+                }
             } catch (e: Throwable) {
                 ret = "Error running day 1:\n${e.stackTraceToString()}"
             }
         }
         return time to ret
     }
+
+    public var didDay2Fail: String = "NOT_RUN";
 
     public fun runDay2(): Pair<Long, Any?> {
         val fn = this::class.functions.find {
@@ -55,6 +74,19 @@ abstract class Solution<T> {
         val time = measureNanoTime {
             try {
                 ret = fn.call(this, args)
+                try {
+                    val expected = fn.findAnnotation<Solved>()?.answer;
+                    if (expected != null) {
+                        if (ret?.toString() != expected) {
+                            didDay2Fail = "Expected $expected, but got ${ret?.toString()}";
+                        } else {
+                            didDay2Fail = "OK"
+                        }
+                    }
+                } catch (e: Throwable) {
+                    ret = "Error checking day 2:\n${e.stackTraceToString()}"
+                    didDay2Fail = "ERR";
+                }
             } catch (e: Throwable) {
                 ret = "Error running day 2:\n${e.stackTraceToString()}"
             }

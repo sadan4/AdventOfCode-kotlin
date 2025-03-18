@@ -2,6 +2,7 @@ package zip.sadan.solutions.y24.d11
 
 import zip.sadan.Solution
 import zip.sadan.util.array.toPair
+import zip.sadan.util.debug.Solved
 import zip.sadan.util.pair.map
 
 typealias TInput = String
@@ -42,6 +43,7 @@ class Code : Solution<TInput>() {
         return cur
     }
 
+    @Solved("193607")
     override fun part1(input: TInput): Any? {
         val nums = input
             .removeSuffix("\n")
@@ -78,6 +80,7 @@ class Code : Solution<TInput>() {
         return res
     }
 
+    @Solved("229557103025807")
     override fun part2(input: TInput): Any? {
         val nums = input
             .removeSuffix("\n")

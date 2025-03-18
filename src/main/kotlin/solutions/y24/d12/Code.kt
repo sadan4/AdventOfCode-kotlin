@@ -3,6 +3,7 @@ package zip.sadan.solutions.y24.d12
 import util.input.UseFile
 import zip.sadan.Solution
 import zip.sadan.util.array.lazilyMap
+import zip.sadan.util.debug.Solved
 import zip.sadan.util.direction.Linear
 import zip.sadan.util.twoD.Coord
 import zip.sadan.util.twoD.RectangularGrid
@@ -64,6 +65,7 @@ class Code : Solution<TInput>() {
     override val year: Number = 24
     override val day: Number = 12
 
+    @Solved("1446042")
     @UseFile("./test1.txt")
     override fun part1(input: TInput): Any? {
         val plants = input.map {
