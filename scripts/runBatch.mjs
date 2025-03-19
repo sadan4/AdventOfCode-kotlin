@@ -45,7 +45,6 @@ async function results(year, days) {
     const todo = days;
     let cur;
     while (cur = days.pop()) {
-        Writable
         const outstream = new PassThrough();
         // https://stackoverflow.com/questions/78963790/the-argument-stdio-is-invalid-received-customwritablestream
         const child = spawn("node", [
