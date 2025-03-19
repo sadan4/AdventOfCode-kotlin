@@ -13,105 +13,103 @@ private enum class Operation {
     CONCAT,
     MUL,
 }
+
 private infix fun Long.concat(other: Long): Long = (this.toString() + other.toString()).toLong()
 class Code : Solution<TInput>() {
     override val year: Number = 24
     override val day: Number = 7
 
-    private fun isPossible(_a: Pair<Long, List<Long>>): List<Operation> {
+    private fun isPossible(_a: Pair<Long, List<Long>>): Boolean {
         val (total, nums) = _a;
         val (a, b) = nums
         if (nums.size == 2) {
-            if (a * b == total) return listOf(Operation.MUL)
-            if (a + b == total) return listOf(Operation.ADD)
-            return listOf(Operation.NONE)
+            if (a * b == total) return true
+            if (a + b == total) return true
+            return false
         }
         val rest = nums.subList(2, nums.size)
-        while (rest.isNotEmpty()) {
-            val tryMul = isPossible(total to (a * b addHead rest))
-            if (tryMul.none {
-                it == Operation.NONE
-                }) {
-                return tryMul + Operation.MUL
-            }
-            val tryAdd = isPossible(total to (a + b addHead rest))
-            if (tryAdd.none {
-                it == Operation.NONE
-                }) {
-                return tryAdd + Operation.ADD
-            }
-            return listOf(Operation.NONE)
+        val tryMul = isPossible(total to (a * b addHead rest))
+        if (tryMul) {
+            return true
         }
+        val tryAdd = isPossible(total to (a + b addHead rest))
+        return tryAdd
         error("Should not reach here")
     }
 
     @Solved("538191549061")
     override fun part1(input: TInput): Any? {
         val exprs = input.map {
-            with(it.split(":").toPair()) {
-                first.toLong() to second.trim().split(" ").map {
-                    it.toLong()
-                }
+            with(
+                it
+                    .split(":")
+                    .toPair()
+            ) {
+                first.toLong() to second
+                    .trim()
+                    .split(" ")
+                    .map {
+                        it.toLong()
+                    }
             }
         }
-        return exprs.filter {
-            isPossible(it).none {
-                it == Operation.NONE
+        return exprs
+            .filter {
+                isPossible(it)
             }
-        }.sumOf {
-            it.first
-        }
+            .sumOf {
+                it.first
+            }
     }
 
-    private fun isPossiblep2(_a: Pair<Long, List<Long>>): List<Operation> {
-        val (total, nums) = _a;
-        val (a, b) = nums
+    private fun isPossibleP2(_entry: Pair<Long, List<Long>>): Boolean {
+        val (total, nums) = _entry;
         if (nums.size == 2) {
-            if (a * b == total) return listOf(Operation.MUL)
-            if (a + b == total) return listOf(Operation.ADD)
-            if (a concat b == total) return listOf(Operation.CONCAT)
-            return listOf(Operation.NONE)
+            val (a, b) = nums;
+            return when (total) {
+                a + b,
+                a * b,
+                a concat b -> true
+
+                else -> false
+            }
+        } else if (nums.size < 2) {
+            error("nums should always have at least 2 elements");
         }
-        val rest = nums.subList(2, nums.size)
-        while (rest.isNotEmpty()) {
-            val tryMul = isPossible(total to (a * b addHead rest))
-            if (tryMul.none {
-                    it == Operation.NONE
-                }) {
-                return tryMul + Operation.MUL
-            }
-            val tryAdd = isPossible(total to (a + b addHead rest))
-            if (tryAdd.none {
-                    it == Operation.NONE
-                }) {
-                return tryAdd + Operation.ADD
-            }
-            val tryConcat = isPossible(total to (a concat b addHead rest))
-            if (tryConcat.none {
-                    it == Operation.NONE
-                }) {
-                return tryConcat + Operation.CONCAT
-            }
-            return listOf(Operation.NONE)
-        }
-        error("Should not reach here")
+        val (a, b) = nums;
+        val rest = nums.subList(2, nums.size);
+        val tryAdd = isPossibleP2(total to (a + b addHead rest))
+        if (tryAdd)
+            return true
+        val tryMul = isPossibleP2(total to (a * b addHead rest))
+        if (tryMul)
+            return true
+        val tryConcat = isPossibleP2(total to (a concat b addHead rest))
+        return tryConcat
     }
 
     @Solved("34612812972206")
     override fun part2(input: TInput): Any? {
         val exprs = input.map {
-            with(it.split(":").toPair()) {
-                first.toLong() to second.trim().split(" ").map {
-                    it.toLong()
-                }
+            with(
+                it
+                    .split(":")
+                    .toPair()
+            ) {
+                first.toLong() to second
+                    .trim()
+                    .split(" ")
+                    .map {
+                        it.toLong()
+                    }
             }
         }
-        return exprs.filter {
-            isPossiblep2(it).none {
-                it == Operation.NONE
+        return exprs
+            .filter {
+                isPossibleP2(it)
             }
-        }.sumOf {
-            it.first
-        }
+            .sumOf {
+                it.first
+            }
     }
 }
