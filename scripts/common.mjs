@@ -1,7 +1,32 @@
 import {parseArgs as node_parseArgs} from "node:util";
 import {join, dirname} from "node:path";
+import config from "../.env.json" with {type: "json"};
+import {writeFile} from "node:fs/promises";
+
 export const TEMPLATE_FILE = "./scripts/template"
 const BASE_PATH = "./src/main/kotlin/solutions"
+
+/**
+ * @param {string} year
+ * @param {string} day
+ * @param {string} inputFilename
+ */
+export async function downloadInputFile(year, day, inputFilename) {
+    const url = `https://adventofcode.com/20${year}/day/${day}/input`;
+    console.log(`Fetching input from ${url}`)
+    const input = await (await fetch(new Request(url, {
+        headers: {
+            Cookie: `session=${config.cookie}`,
+            "User-Agent": config.userAgent
+        }
+    }))).text();
+    console.log(`Preview of input:\n${input.substring(0, 100)}`)
+    console.log(`Writing input to ${inputFilename}`)
+    if(input.startsWith("Puzzle inputs differ by user")) {
+        throw new Error("Invalid auth token");
+    }
+    await writeFile(inputFilename, input)
+}
 
 /**
  *
@@ -10,15 +35,17 @@ const BASE_PATH = "./src/main/kotlin/solutions"
  * @returns {string}
  */
 export function getCodeFilename(year, day) {
-    return join(getYearDir(year),`d${day}/Code.kt`)
+    return join(getYearDir(year), `d${day}/Code.kt`)
 }
+
 /**
  * @param {string} year
  * @param {string} day
  */
 export function getInputFilename(year, day) {
-    return join(getYearDir(year),`d${day}/input.txt`)
+    return join(getYearDir(year), `d${day}/input.txt`)
 }
+
 /**
  *
  * @param year {string}
@@ -30,12 +57,12 @@ export function getTodaysDir(year, day) {
 }
 
 /**
- * 
- * @param {string} year 
+ *
+ * @param {string} year
  * @returns {string}
  */
 export function getYearDir(year) {
-    return join(BASE_PATH, `y${year}`)    
+    return join(BASE_PATH, `y${year}`)
 }
 
 function getToday() {
@@ -52,12 +79,13 @@ function getToday() {
  */
 /**
  * @overload
- * @param {true} [useDefault=true] 
+ * @param {true} [useDefault=true]
  * @returns {opts}
  */
+
 /**
  * @overload
- * @param {false} [useDefault=true] 
+ * @param {false} [useDefault=true]
  * @returns {Pick<opts, "year" | "day">}
  */
 /**

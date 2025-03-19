@@ -1,9 +1,8 @@
-import {parseArgs} from "./common.mjs";
-import {exec} from "node:child_process";
-import {readdirSync, writeFileSync} from "node:fs";
-import {execFileSync, execSync} from "node:child_process";
+import {downloadInputFile, parseArgs} from "./common.mjs";
+import {execSync} from "node:child_process";
+import {existsSync} from "node:fs";
 
-const {year, day} = parseArgs();
+const {year, day, inputFilename} = parseArgs();
 let command
 switch (process.platform) {
     case "win32":
@@ -12,6 +11,9 @@ switch (process.platform) {
     default:
         command = `./gradlew run -DYEAR=${year} -DDAY=${day}`;
 
+}
+if (!existsSync(inputFilename)) {
+    await downloadInputFile(year, day, inputFilename);
 }
 try {
     execSync(command, {

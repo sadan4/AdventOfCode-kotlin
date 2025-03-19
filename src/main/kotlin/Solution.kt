@@ -31,7 +31,7 @@ abstract class Solution<T> {
         @Suppress("UNCHECKED_CAST")
         return ret as T
     }
-
+    public var code = 0;
     public var didDay1Fail: String = "NOT_RUN";
 
     public fun runDay1(): Pair<Long, Any?> {
@@ -58,6 +58,7 @@ abstract class Solution<T> {
                 }
             } catch (e: Throwable) {
                 ret = "Error running day 1:\n${e.stackTraceToString()}"
+                code++;
             }
         }
         return time to ret
@@ -89,6 +90,7 @@ abstract class Solution<T> {
                 }
             } catch (e: Throwable) {
                 ret = "Error running day 2:\n${e.stackTraceToString()}"
+                code++;
             }
         }
         return time to ret

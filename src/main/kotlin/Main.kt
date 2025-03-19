@@ -23,7 +23,7 @@ fun main() {
     println("Part 1: \n${d1Ret.second ?: "null"}")
     println("Part 2 time: ${d2Ret.first.div(1e6)}ms")
     println("Part 2: \n${d2Ret.second ?: "null"}")
-    var status = 0;
+    var status = today.code;
     when (today.didDay1Fail) {
         "OK" -> println("Day 1 passed checks")
         "NOT_RUN" -> println("No checks for day 1")
