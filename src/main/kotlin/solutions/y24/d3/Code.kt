@@ -1,10 +1,10 @@
 package zip.sadan.solutions.y24.d3
 
 import zip.sadan.Solution
-import zip.sadan.util.array.toPair
+import zip.sadan.util.collections.pair.toPair
 import zip.sadan.util.debug.Solved
-import zip.sadan.util.pair.map
-import zip.sadan.util.pair.mult
+import zip.sadan.util.collections.pair.map
+import zip.sadan.util.collections.pair.mult
 import zip.sadan.util.regex.Regex
 import zip.sadan.util.regex.captureAll
 

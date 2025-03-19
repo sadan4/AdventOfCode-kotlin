@@ -1,8 +1,8 @@
 package zip.sadan.solutions.y24.d2
 
 import zip.sadan.Solution
-import zip.sadan.util.array.dropOne
-import zip.sadan.util.array.toPair
+import zip.sadan.util.collections.list.dropOne
+import zip.sadan.util.collections.pair.toPair;
 import zip.sadan.util.debug.Solved
 import zip.sadan.util.input.numbers
 

@@ -1,4 +1,4 @@
-package zip.sadan.util.pair
+package zip.sadan.util.collections.pair
 
 fun <T> Pair<T, T>.all(other: T): Boolean {
     return this.first == other && this.second == other

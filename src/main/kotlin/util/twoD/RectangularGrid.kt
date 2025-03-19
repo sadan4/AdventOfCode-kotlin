@@ -1,11 +1,9 @@
 package zip.sadan.util.twoD
 
-import zip.sadan.util.array.isSquare
+import zip.sadan.util.collections.list.isSquare
 import zip.sadan.util.debug.ColoredString
 import zip.sadan.util.direction.IHasShift
-import zip.sadan.util.array.get;
-import zip.sadan.util.array.lazilyMap
-import zip.sadan.util.array.set;
+import zip.sadan.util.collections.iterator.lazilyMap
 import java.util.Stack
 import kotlin.math.abs
 

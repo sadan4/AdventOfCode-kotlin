@@ -1,8 +1,8 @@
 package zip.sadan.solutions.y24.d7
 
 import zip.sadan.Solution
-import zip.sadan.util.array.addHead
-import zip.sadan.util.array.toPair
+import zip.sadan.util.collections.list.addHead
+import zip.sadan.util.collections.pair.toPair
 import zip.sadan.util.debug.Solved
 
 typealias TInput = List<String>

@@ -1,4 +1,4 @@
-package zip.sadan.util.array
+package zip.sadan.util.collections.list
 
 import zip.sadan.util.twoD.Coord
 

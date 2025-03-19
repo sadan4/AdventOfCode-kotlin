@@ -1,6 +1,6 @@
 package zip.sadan.util.twoD
 
-import zip.sadan.util.array.isSquare
+import zip.sadan.util.collections.list.isSquare
 import zip.sadan.util.direction.Direction
 
 

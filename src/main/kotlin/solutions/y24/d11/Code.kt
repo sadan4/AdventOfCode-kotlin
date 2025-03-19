@@ -1,9 +1,7 @@
 package zip.sadan.solutions.y24.d11
 
 import zip.sadan.Solution
-import zip.sadan.util.array.toPair
 import zip.sadan.util.debug.Solved
-import zip.sadan.util.pair.map
 
 typealias TInput = String
 typealias TCache25 = HashMap<Long, List<Long>>

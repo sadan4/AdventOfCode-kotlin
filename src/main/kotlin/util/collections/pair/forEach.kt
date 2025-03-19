@@ -1,4 +1,4 @@
-package zip.sadan.util.pair
+package zip.sadan.util.collections.pair
 
 typealias PairOf<T> = Pair<T, T>
 

@@ -1,4 +1,4 @@
-package zip.sadan.util.pair
+package zip.sadan.util.collections.pair
 
 fun Pair<Int, Int>.mult() = first * second
 fun Pair<Int, Int>.sum() = first + second

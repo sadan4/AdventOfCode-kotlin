@@ -2,7 +2,7 @@ package zip.sadan.solutions.y24.d5
 
 import util.input.UseFile
 import zip.sadan.Solution
-import zip.sadan.util.array.*
+import zip.sadan.util.collections.pair.toPair
 
 private fun List<String>.makeRules(): List<Pair<Int, Int>> = this
     .map {
@@ -44,7 +44,7 @@ class Code : Solution<String>() {
     override val year: Number = 24
     override val day: Number = 5
 
-    @UseFile("./roz.txt")
+    @UseFile("./input.txt")
     override fun part1(input: String): Any? {
         val inp = input
             .split("\n\n")

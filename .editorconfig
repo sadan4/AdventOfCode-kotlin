@@ -1,0 +1,10 @@
+# EditorConfig is awesome: https://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+[*]
+indent_style = space
+indent_size = 4
+# Unix-style newlines with a newline ending every file
+[*.txt]
+end_of_line = lf

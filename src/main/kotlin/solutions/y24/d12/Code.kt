@@ -2,11 +2,12 @@ package zip.sadan.solutions.y24.d12
 
 import util.input.UseFile
 import zip.sadan.Solution
-import zip.sadan.util.array.lazilyMap
 import zip.sadan.util.debug.Solved
 import zip.sadan.util.direction.Linear
+import zip.sadan.util.collections.set.containsAny
 import zip.sadan.util.twoD.Coord
 import zip.sadan.util.twoD.RectangularGrid
+import kotlin.collections.HashSet
 
 typealias TInput = List<String>
 
@@ -25,40 +26,25 @@ private fun HashSet<Coord>.perimeter(): Int {
 
 typealias TEdge = Pair<Linear, Coord>
 
-private fun <T> HashSet<Coord>.perimeter2(grid: RectangularGrid<T>): Int {
-    val possible = HashSet<TEdge>()
-    val counted = HashSet<TEdge>()
-    var edges = 0
-    for (coord in this) {
-        for (dir in Linear.entries) {
-            val neighbor = coord + dir.toShift()
-            if (neighbor !in this && neighbor in grid) {
-                possible.add(dir.inverse().first to neighbor)
-            }
-        }
-    }
-    possible.forEach {
-        if (it in counted) return@forEach
-        if(possible.size == counted.size) return edges
-        val (dir, coord) = it
-        val compliment = dir.compliment()
-        val line: List<TEdge> = (if (coord !in grid) emptyList() else grid
-            .coordsUntil(coord, dir) {
-                dir to it !in possible
-            }
-            .lazilyMap { dir to it }) + if (coord !in grid) emptyList() else (grid
-            .coordsUntil(
-                coord, compliment
-            ) {
-                dir to it !in possible
-            }
-            .lazilyMap { dir to it }
-            .drop(1))
-        counted.addAll(line)
-        edges++
-    }
-    return edges;
+fun normalizeEdgeDir(dir: Linear): Linear = when (dir) {
+    Linear.E, Linear.W -> Linear.E
+    Linear.N, Linear.S -> Linear.N
+}
 
+private fun <T> HashSet<Coord>.perimeter2(grid: RectangularGrid<T>): Int {
+
+    val countedEdges: HashSet<TEdge> = HashSet();
+
+    // coords that have a border with an edge
+    var edgePieces = this.filter {
+        this.containsAny(it.linearNeighbors())
+    }
+        .toMutableSet()
+    while(edgePieces.isNotEmpty()) {
+
+    }
+
+    return -1;
 }
 
 class Code : Solution<TInput>() {
@@ -87,7 +73,8 @@ class Code : Solution<TInput>() {
         }
     }
 
-    @UseFile("./input.txt")
+//    @Solved("80")
+    @UseFile("./test1.txt")
     override fun part2(input: TInput): Any? {
         val plants = input.map {
             it

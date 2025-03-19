@@ -1,4 +1,4 @@
-package zip.sadan.util.array
+package zip.sadan.util.collections.list
 
 fun <T> Fill(len: Int, func: (index: Int) -> T): List<T> {
     val list = ArrayList<T>()

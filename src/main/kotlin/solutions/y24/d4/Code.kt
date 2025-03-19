@@ -3,9 +3,9 @@ package zip.sadan.solutions.y24.d4
 import util.input.UseFile
 import zip.sadan.Solution
 import zip.sadan.util.twoD.Coord
-import zip.sadan.util.array.Fill
-import zip.sadan.util.array.mult
-import zip.sadan.util.array.window2d
+import zip.sadan.util.collections.list.Fill
+import zip.sadan.util.collections.list.mult
+import zip.sadan.util.collections.list.window2d
 import zip.sadan.util.debug.Solved
 import zip.sadan.util.direction.Direction
 import zip.sadan.util.twoD.SquareGrid

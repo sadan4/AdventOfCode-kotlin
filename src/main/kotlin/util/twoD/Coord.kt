@@ -20,13 +20,17 @@ class Coord(val x: Int, val y: Int) {
     operator fun component1(): Int = x
     operator fun component2(): Int = y
 
-    fun linearNeighbors(): List<Coord> {
+    fun linearNeighborsWithDir(): List<Pair<Linear, Coord>> {
         return listOf(
-            this + Linear.N.toShift(),
-            this + Linear.S.toShift(),
-            this + Linear.E.toShift(),
-            this + Linear.W.toShift()
+            Linear.N to this + Linear.N.toShift(),
+            Linear.S to this + Linear.S.toShift(),
+            Linear.E to this + Linear.E.toShift(),
+            Linear.W to this + Linear.W.toShift()
         )
+    }
+
+    fun linearNeighbors(): List<Coord> = this.linearNeighborsWithDir().map {
+        it.second
     }
     fun diagonalNeighbors(): List<Coord> {
         return listOf(
@@ -181,3 +185,8 @@ class Coord(val x: Int, val y: Int) {
         return result
     }
 }
+
+typealias MGrid<T> = MutableList<MutableList<T>>
+
+operator fun <T> List<List<T>>.get(c: Coord): T = this[c.y][c.x]
+operator fun <T> MGrid<T>.set(c: Coord, value: T): T = this[c.y].set(c.x, value)
