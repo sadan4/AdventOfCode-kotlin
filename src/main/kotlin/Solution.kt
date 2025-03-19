@@ -4,7 +4,6 @@ import util.input.UseFile
 import zip.sadan.util.debug.Solved
 import zip.sadan.util.input.makeLines
 import java.io.File
-import kotlin.math.exp
 import kotlin.reflect.KFunction
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.functions
@@ -31,10 +30,11 @@ abstract class Solution<T> {
         @Suppress("UNCHECKED_CAST")
         return ret as T
     }
-    public var code = 0;
-    public var didDay1Fail: String = "NOT_RUN";
 
-    public fun runDay1(): Pair<Long, Any?> {
+    public var code = 0;
+    public var didPart1Fail: String = "NOT_RUN";
+
+    public fun runPart1(): Pair<Long, Any?> {
         val fn = this::class.functions.find {
             it.name == "part1"
         } ?: throw RuntimeException("part1 not found")
@@ -47,26 +47,26 @@ abstract class Solution<T> {
                     val expected = fn.findAnnotation<Solved>()?.answer;
                     if (expected != null) {
                         if (ret?.toString() != expected) {
-                            didDay1Fail = "Expected $expected, but got ${ret?.toString()}";
+                            didPart1Fail = "Expected $expected, but got ${ret?.toString()}";
                         } else {
-                            didDay1Fail = "OK"
+                            didPart1Fail = "OK"
                         }
                     }
                 } catch (e: Throwable) {
-                    ret = "Error checking day 1:\n${e.stackTraceToString()}"
-                    didDay1Fail = "ERR";
+                    ret = "Error checking part 1:\n${e.stackTraceToString()}"
+                    didPart1Fail = "ERR";
                 }
             } catch (e: Throwable) {
-                ret = "Error running day 1:\n${e.stackTraceToString()}"
+                ret = "Error running part 1:\n${e.stackTraceToString()}"
                 code++;
             }
         }
         return time to ret
     }
 
-    public var didDay2Fail: String = "NOT_RUN";
+    public var didPart2Fail: String = "NOT_RUN";
 
-    public fun runDay2(): Pair<Long, Any?> {
+    public fun runPart2(): Pair<Long, Any?> {
         val fn = this::class.functions.find {
             it.name == "part2"
         } ?: throw RuntimeException("part2 not found")
@@ -79,17 +79,17 @@ abstract class Solution<T> {
                     val expected = fn.findAnnotation<Solved>()?.answer;
                     if (expected != null) {
                         if (ret?.toString() != expected) {
-                            didDay2Fail = "Expected $expected, but got ${ret?.toString()}";
+                            didPart2Fail = "Expected $expected, but got ${ret?.toString()}";
                         } else {
-                            didDay2Fail = "OK"
+                            didPart2Fail = "OK"
                         }
                     }
                 } catch (e: Throwable) {
-                    ret = "Error checking day 2:\n${e.stackTraceToString()}"
-                    didDay2Fail = "ERR";
+                    ret = "Error checking part 2:\n${e.stackTraceToString()}"
+                    didPart2Fail = "ERR";
                 }
             } catch (e: Throwable) {
-                ret = "Error running day 2:\n${e.stackTraceToString()}"
+                ret = "Error running part 2:\n${e.stackTraceToString()}"
                 code++;
             }
         }

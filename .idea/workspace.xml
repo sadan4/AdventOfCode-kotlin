@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/common.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/common.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/new.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/new.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/run.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d7/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d7/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d8/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d8/Code.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -393,7 +386,7 @@
       <workItem from="1734036776904" duration="412000" />
       <workItem from="1734037201395" duration="3025000" />
       <workItem from="1742332465801" duration="3736000" />
-      <workItem from="1742347119628" duration="4622000" />
+      <workItem from="1742347119628" duration="5041000" />
     </task>
     <servers />
   </component>
