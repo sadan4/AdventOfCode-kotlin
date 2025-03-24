@@ -1,9 +1,8 @@
 import groovy.cli.Option
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
 
-// findme2
 plugins {
-    kotlin("jvm") version "2.0.21"
+    kotlin("jvm") version "2.1.20"
     java
     application
 }
@@ -18,7 +17,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(kotlin("reflect"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
 }
 
 tasks.test {

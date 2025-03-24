@@ -82,7 +82,7 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
         }
     }
 
-    fun formatHlPrint(vararg coords: Coord): String {
+    fun formatHlPrint(coords: Iterable<Coord>): String {
         var longest = 0
         val toRet = arr.map {
             it.map {

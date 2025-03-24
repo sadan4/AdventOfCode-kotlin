@@ -5,45 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/set/containsAny.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/stack/toStack.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d12/test4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/mapFirst.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/mapSecond.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/set/pop.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d1/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d1/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d11/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d11/Code.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Debug.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Debug.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d12/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d12/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d2/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d2/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d3/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d3/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d4/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d4/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d5/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d5/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d7/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d7/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/anyIV.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/anyIV.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/dropOne.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/dropOne.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/fill.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/fill.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/firstUniq.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/firstUniq.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/getCoord.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/getCoordJava.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/isSquare.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/isSquare.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/lazilyMapIterator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/iterator/lazilyMapIterator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/middle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/middle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/mult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/mult.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/plusHead.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/plusHead.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/splitMapInt.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/splitMapSplit.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/toPair.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/toPair.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/unzip.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/array/window2d.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/window2d.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/pair/all.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/all.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/pair/any.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/any.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/pair/forEach.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/forEach.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/pair/map.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/map.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/pair/math.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/math.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/pair/zip.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/pair/zip.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/direction/IHasInverse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/direction/IHasInverse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/RectangularGrid.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/SquareGrid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/SquareGrid.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +73,8 @@
         <option value="Enum" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Annotation" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -157,6 +130,7 @@
     &quot;Gradle.aoc [downloadInput].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.aoc [run].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.aoc d11.executor&quot;: &quot;Profiler#1&quot;,
+    &quot;Gradle.aoc d12.executor&quot;: &quot;Debug&quot;,
     &quot;Gradle.aoc d4.executor&quot;: &quot;Debug&quot;,
     &quot;Gradle.aoc d5.executor&quot;: &quot;Debug&quot;,
     &quot;Gradle.aoc d6.executor&quot;: &quot;Profiler#1&quot;,
@@ -194,6 +168,9 @@
   &quot;keyToStringList&quot;: {
     &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
       &quot;kotlin&quot;
+    ],
+    &quot;kotlin-gradle-user-dirs&quot;: [
+      &quot;C:\\Users\\meyer\\.gradle&quot;
     ]
   }
 }</component>
@@ -220,7 +197,7 @@
       <recent name="solutions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.aoc d11">
+  <component name="RunManager" selected="Gradle.aoc d12">
     <configuration name="Debug" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -287,12 +264,12 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="aoc d11" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="aoc d12" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--stacktrace -DDAY=11 -DYEAR=24" />
+        <option name="scriptParameters" value="--stacktrace -DDAY=12 -DYEAR=24" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -310,8 +287,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.aoc d11" />
       <item itemvalue="Gradle.Debug" />
+      <item itemvalue="Gradle.aoc d12" />
       <item itemvalue="Gradle.aoc [downloadInput]" />
     </list>
     <recent_temporary>
@@ -323,8 +300,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19416.15" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19416.15" />
       </set>
     </attachedChunks>
   </component>
@@ -426,7 +403,15 @@
       <workItem from="1742404260731" duration="265000" />
       <workItem from="1742404768394" duration="135000" />
       <workItem from="1742404926654" duration="392000" />
-      <workItem from="1742405345081" duration="66000" />
+      <workItem from="1742405345081" duration="212000" />
+      <workItem from="1742487652265" duration="850000" />
+      <workItem from="1742492612357" duration="585000" />
+      <workItem from="1742493231320" duration="57000" />
+      <workItem from="1742493297293" duration="312000" />
+      <workItem from="1742493654189" duration="12697000" />
+      <workItem from="1742828529341" duration="1604000" />
+      <workItem from="1742835971567" duration="590000" />
+      <workItem from="1742836585993" duration="3734000" />
     </task>
     <servers />
   </component>
@@ -455,6 +440,10 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="42" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="48" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -464,5 +453,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aoc$aoc_d11.ic" NAME="aoc d11 Coverage Results" MODIFIED="1742356460832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/aoc$aoc_d12.ic" NAME="aoc d12 Coverage Results" MODIFIED="1742828462731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

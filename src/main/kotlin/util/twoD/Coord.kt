@@ -6,7 +6,7 @@ import zip.sadan.util.direction.Quadrant
 import kotlin.collections.ArrayList
 import kotlin.math.abs
 import kotlin.math.sign
-private inline fun closestButNotZero(ox: Int, oy: Int): Int = if (ox == 0 || oy == 0) abs(ox + oy) else Math.min(abs(ox), abs(oy))
+private fun closestButNotZero(ox: Int, oy: Int): Int = if (ox == 0 || oy == 0) abs(ox + oy) else Math.min(abs(ox), abs(oy))
 
 class Coord(val x: Int, val y: Int) {
 
