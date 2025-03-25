@@ -3,7 +3,7 @@ package zip.sadan.solutions.y%YY%.d%DD%
 import zip.sadan.Solution
 import java.io.File
 
-typealias TInput = List<String>
+private typealias TInput = List<String>
 
 class Code : Solution<TInput>() {
     override val year: Number = %YY%
