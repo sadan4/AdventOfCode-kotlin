@@ -88,6 +88,7 @@ class Code : Solution<TInput>() {
             }
     }
 
+    @Solved("71493195288102")
     @UseFile("input.txt")
     override fun part2(input: TInput): Any? {
         return input
