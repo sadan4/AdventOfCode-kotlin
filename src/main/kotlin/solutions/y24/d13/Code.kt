@@ -79,8 +79,6 @@ class Code : Solution<TInput>() {
     @Solved("40069")
     @UseFile("input.txt")
     override fun part1(input: TInput): Any? {
-
-
         return input
             .parseInput()
             .sumOf {
