@@ -13,7 +13,7 @@ import zip.sadan.util.twoD.RectangularGrid
 import zip.sadan.util.twoD.toEdge
 import kotlin.collections.HashSet
 
-typealias TInput = List<String>
+private typealias TInput = List<String>
 
 private fun HashSet<Coord>.area() = this.size
 private fun HashSet<Coord>.perimeter(): Int {
@@ -28,7 +28,7 @@ private fun HashSet<Coord>.perimeter(): Int {
     return edges
 }
 
-fun normalizeEdgeDir(dir: Linear): Linear = when (dir) {
+private fun normalizeEdgeDir(dir: Linear): Linear = when (dir) {
     Linear.E, Linear.W -> Linear.E
     Linear.N, Linear.S -> Linear.N
 }
