@@ -1,6 +1,3 @@
-import groovy.cli.Option
-import org.jetbrains.kotlin.gradle.plugin.extraProperties
-
 plugins {
     kotlin("jvm") version "2.1.20"
     java
