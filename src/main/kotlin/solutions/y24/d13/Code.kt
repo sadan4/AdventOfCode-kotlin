@@ -7,14 +7,14 @@ import zip.sadan.util.regex.capture
 import zip.sadan.util.twoD.Coord
 import kotlin.math.*
 
-typealias TInput = String
+private typealias TInput = String
 
 private typealias Button = Coord;
 
 private data class Machine(val prize: Coord, val a: Button, val b: Button);
 
-val BUTTON_REGEX = Regex(""".+X\+(\d+), Y\+(\d+)$""");
-val PRIZE_REGEX = Regex(""".+X=(\d+), Y=(\d+)$""");
+private val BUTTON_REGEX = Regex(""".+X\+(\d+), Y\+(\d+)$""");
+private val PRIZE_REGEX = Regex(""".+X=(\d+), Y=(\d+)$""");
 
 class Code : Solution<TInput>() {
     override val year: Number = 24
