@@ -2,7 +2,7 @@ package zip.sadan.solutions.y24.d13
 
 import util.input.UseFile
 import zip.sadan.Solution
-import zip.sadan.util.collections.pair.map
+import zip.sadan.util.debug.Solved
 import zip.sadan.util.regex.capture
 import zip.sadan.util.twoD.Coord
 import kotlin.math.*
@@ -45,19 +45,6 @@ class Code : Solution<TInput>() {
             }
     }
 
-    /**
-     * easy pythagorean formula given other point at 0, 0
-     */
-    private fun Coord.hyp(): Double {
-        return sqrt(
-            this.x
-                .toDouble()
-                .pow(2) + this.y
-                .toDouble()
-                .pow(2)
-        )
-    }
-
     private fun Machine.solve(): Int {
         var aCount = 0;
         var bCount = min(100, floor(max(prize.x / b.x.toDouble(), prize.y / b.y.toDouble())).toInt());
@@ -77,40 +64,20 @@ class Code : Solution<TInput>() {
     }
 
     private fun Machine.solve2(): Long {
-        operator fun Pair<Long, Long>.times(num: Long): Pair<Long, Long> = this.map {
-            it * num;
+        val p = object {
+            val x = prize.x + 10000000000000
+            val y = prize.y + 10000000000000
         }
-
-        operator fun Pair<Long, Long>.plus(other: Pair<Long, Long>): Pair<Long, Long> =
-            this.first + other.first to this.second + other.second;
-        // shadowed for operator overloading
-        val a = (a.x to a.y).map {
-            it.toLong()
-        };
-        val b = (b.x to b.y).map {
-            it.toLong()
-        };
-        val prize = (prize.x to prize.y).map {
-            (it + 1e13).toLong()
-        };
-        var bCount =
-            min(100L, floor(max(prize.first / b.first.toDouble(), prize.first / b.second.toDouble())).toLong());
-        // really big number, but not big enough to where it will be slow
-        var aCount = bCount - 1e5.toLong();
-        fun diff(): Pair<Long, Long> = a * aCount + b * bCount;
-        while (diff() != prize) {
-            // At least one is overshot the prize, we need to lessen b until we have room
-            if (diff().first > prize.first || diff().second > prize.second) {
-                bCount--;
-                continue;
-            }
-            aCount++;
+        val timesA = (p.x*b.y - p.y*b.x) / (a.x*b.y - a.y*b.x).toDouble()
+        val timesB = (p.x-(a.x*timesA))/b.x.toDouble();
+        if(floor(timesA) != timesA || floor(timesB) != timesB) {
+            return 0;
         }
-        println("done")
-        return aCount * 3 + bCount;
+        return (3 * timesA + timesB).toLong();
     }
 
-    @UseFile("test1.txt")
+    @Solved("40069")
+    @UseFile("input.txt")
     override fun part1(input: TInput): Any? {
 
 
@@ -121,13 +88,10 @@ class Code : Solution<TInput>() {
             }
     }
 
-    @UseFile("test1.txt")
+    @UseFile("input.txt")
     override fun part2(input: TInput): Any? {
         return input
             .parseInput()
-            .filter {
-                it.solve() == 0;
-            }
             .sumOf {
                 it.solve2()
             }
