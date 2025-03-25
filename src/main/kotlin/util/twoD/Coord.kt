@@ -42,6 +42,11 @@ class Coord(val x: Int, val y: Int) {
     }
     fun neighbors(): List<Coord> = linearNeighbors() + diagonalNeighbors()
 
+    fun linearEdges() = this.linearNeighbors()
+        .map {
+            Edge(this, it)
+        };
+
     fun toPair(): Pair<Int, Int> = Pair(x, y)
 
     fun getQuadrant(): Quadrant {
@@ -58,31 +63,31 @@ class Coord(val x: Int, val y: Int) {
         return "($x, $y)"
     }
 
-    inline operator fun plus(other: Coord): Coord {
+    operator fun plus(other: Coord): Coord {
         return Coord(x + other.x, y + other.y)
     }
 
-    inline operator fun minus(other: Coord): Coord {
+    operator fun minus(other: Coord): Coord {
         return Coord(x - other.x, y - other.y)
     }
 
-    inline operator fun plus(other: Int): Coord {
+    operator fun plus(other: Int): Coord {
         return Coord(x + other, y + other)
     }
 
-    inline operator fun minus(other: Int): Coord {
+    operator fun minus(other: Int): Coord {
         return Coord(x - other, y - other)
     }
 
-    inline operator fun times(other: Coord): Coord {
+    operator fun times(other: Coord): Coord {
         return Coord(x * other.x, y * other.y)
     }
 
-    inline operator fun times(other: Int): Coord {
+    operator fun times(other: Int): Coord {
         return Coord(x * other, y * other)
     }
 
-    inline operator fun unaryMinus(): Coord {
+    operator fun unaryMinus(): Coord {
         return Coord(-x, -y)
     }
 

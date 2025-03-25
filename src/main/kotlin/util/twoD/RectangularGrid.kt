@@ -10,7 +10,7 @@ import kotlin.math.abs
 typealias TGrid<T> = List<List<T>>
 
 private fun Int.abs() = abs(this)
-class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
+class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) : Collection<T> {
 
     constructor(arr: TGrid<T>) : this(arr, Coord(0, 0))
 
@@ -25,9 +25,11 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
         require(arr[0].isNotEmpty()) { "Grid must have at least one column" }
     }
 
-    private val arr: MutableList<MutableList<T>> = arr.map {
-        it.toMutableList()
-    }.toMutableList()
+    private val arr: MutableList<MutableList<T>> = arr
+        .map {
+            it.toMutableList()
+        }
+        .toMutableList()
     override val size: Int
         get() = width * height
 
@@ -50,7 +52,7 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
         val valid = hashSetOf(start)
         val toVisit = Stack<Coord>()
         toVisit.addAll(start.linearNeighbors())
-        while(toVisit.isNotEmpty()) {
+        while (toVisit.isNotEmpty()) {
             val cur = toVisit.pop()
             if (cur in valid) continue
             if (cur !in this) continue
@@ -69,30 +71,38 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
 
     override fun toString(): String {
         var longest = 0
-        return arr.map {
-            it.map {
-                val s = it.toString()
-                if (s.length > longest) longest = s.length
-                s
+        return arr
+            .map {
+                it.map {
+                    val s = it.toString()
+                    if (s.length > longest) longest = s.length
+                    s
+                }
             }
-        }.joinToString("\n") {
-            it.joinToString(" ") {
-                it.padEnd(longest)
+            .joinToString("\n") {
+                it.joinToString(" ") {
+                    it.padEnd(longest)
+                }
             }
-        }
     }
 
     fun formatHlPrint(coords: Iterable<Coord>): String {
         var longest = 0
-        val toRet = arr.map {
-            it.map {
-                val s = it.toString()
-                if (s.length > longest) longest = s.length
-                s
-            }.toMutableList()
-        }.toMutableList()
+        val toRet = arr
+            .map {
+                it
+                    .map {
+                        val s = it.toString()
+                        if (s.length > longest) longest = s.length
+                        s
+                    }
+                    .toMutableList()
+            }
+            .toMutableList()
         coords.forEach { c ->
-            toRet[c] = ColoredString(toRet[c]).setForegroundColor(255, 0, 124).toString()
+            toRet[c] = ColoredString(toRet[c])
+                .setForegroundColor(255, 0, 124)
+                .toString()
         }
         return toRet.joinToString("\n") {
             it.joinToString(" ") {
@@ -160,7 +170,7 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
     inline fun coordsUntil(at: Coord, direction: IHasShift, fn: (Coord) -> Boolean): CIterator {
         var cur: Coord = at
         for (c in coordsOfLine(at, direction)) {
-            if(c !in this) break
+            if (c !in this) break
             if (fn(c)) {
                 break
             }
@@ -208,11 +218,13 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
         return toRet
     }
 
-    fun count(value: T): Int = arr.toList().sumOf {
-        it.count {
-            it == value
+    fun count(value: T): Int = arr
+        .toList()
+        .sumOf {
+            it.count {
+                it == value
+            }
         }
-    }
 
     fun isOnEdge(at: Coord): Boolean = at.x == 0 || at.y == 0 || at.x == width - 1 || at.y == height - 1
 
@@ -220,7 +232,7 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord): Collection<T> {
         return RectangularGrid(arr.map { it.toList() }, rootCoord)
     }
 
-    public operator fun contains(c: Coord): Boolean{
+    public operator fun contains(c: Coord): Boolean {
         if (c.x < 0 || c.y < 0) return false
         if (c.x >= width || c.y >= height) return false
         return true
