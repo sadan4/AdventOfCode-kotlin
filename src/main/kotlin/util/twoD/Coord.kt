@@ -8,6 +8,14 @@ import kotlin.math.abs
 import kotlin.math.sign
 private fun closestButNotZero(ox: Int, oy: Int): Int = if (ox == 0 || oy == 0) abs(ox + oy) else Math.min(abs(ox), abs(oy))
 
+public operator fun Int.times(other: Coord): Coord = other * this;
+
+public operator fun Int.plus(other: Coord): Coord = other + this
+
+public operator fun Int.minus(other: Coord): Coord {
+    return Coord(this - other.x, this - other.y);
+}
+
 class Coord(val x: Int, val y: Int) {
 
     constructor(a: Int) : this(a, a)
