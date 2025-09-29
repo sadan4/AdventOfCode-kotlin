@@ -6,7 +6,9 @@ import zip.sadan.util.direction.Quadrant
 import kotlin.collections.ArrayList
 import kotlin.math.abs
 import kotlin.math.sign
-private fun closestButNotZero(ox: Int, oy: Int): Int = if (ox == 0 || oy == 0) abs(ox + oy) else Math.min(abs(ox), abs(oy))
+
+private fun closestButNotZero(ox: Int, oy: Int): Int =
+    if (ox == 0 || oy == 0) abs(ox + oy) else Math.min(abs(ox), abs(oy))
 
 public operator fun Int.times(other: Coord): Coord = other * this;
 
@@ -37,9 +39,12 @@ class Coord(val x: Int, val y: Int) {
         )
     }
 
-    fun linearNeighbors(): List<Coord> = this.linearNeighborsWithDir().map {
-        it.second
-    }
+    fun linearNeighbors(): List<Coord> = this
+        .linearNeighborsWithDir()
+        .map {
+            it.second
+        }
+
     fun diagonalNeighbors(): List<Coord> {
         return listOf(
             this + Diagonal.NE.toShift(),
@@ -48,9 +53,11 @@ class Coord(val x: Int, val y: Int) {
             this + Diagonal.SW.toShift()
         )
     }
+
     fun neighbors(): List<Coord> = linearNeighbors() + diagonalNeighbors()
 
-    fun linearEdges() = this.linearNeighbors()
+    fun linearEdges() = this
+        .linearNeighbors()
         .map {
             Edge(this, it)
         };
@@ -134,7 +141,13 @@ class Coord(val x: Int, val y: Int) {
         return object : CIterator() {
             private var i = 0
             override fun hasNext(): Boolean = i <= t
-            override fun next(): Coord = Coord(i * dx, i++ * dy)
+            override fun next(): Coord = Coord(
+                if (dx == 0) x else i * dx,
+                if (dy == 0) {
+                    i++;
+                    y
+                } else i++ * dy
+            )
         }
     }
 
@@ -160,7 +173,7 @@ class Coord(val x: Int, val y: Int) {
     infix fun to(bl: Coord): CIterator {
         val (ox, oy) = bl
         val toRet = ArrayList<Coord>((x - ox) * (y - oy))
-        for(i in x..ox) {
+        for (i in x..ox) {
             for (j in y..oy) {
                 toRet.add(Coord(i, j))
             }

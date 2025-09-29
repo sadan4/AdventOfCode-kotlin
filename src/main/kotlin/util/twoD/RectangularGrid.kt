@@ -10,7 +10,7 @@ import kotlin.math.abs
 typealias TGrid<T> = List<List<T>>
 
 private fun Int.abs() = abs(this)
-class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) : Collection<T> {
+open class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) : Collection<T> {
 
     constructor(arr: TGrid<T>) : this(arr, Coord(0, 0))
 
@@ -241,4 +241,7 @@ class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) : Collection<T> {
     public operator fun get(index: Int): List<T> = arr[index]
 
     public operator fun get(c: Coord): T = arr[c.y][c.x]
+    public operator fun set(c: Coord, value: T) {
+        arr[c.y][c.x] = value
+    }
 }
