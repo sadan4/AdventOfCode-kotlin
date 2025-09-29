@@ -111,8 +111,7 @@ class Code : Solution<TInput>() {
 
             val totalWhitespaceLength = whitespaceRange
                 .map(fragments::get)
-                .map(Fragment::len)
-                .sum();
+                .sumOf(Fragment::len);
 
             fragments.replaceRange(whitespaceRange, Fragment(-1, totalWhitespaceLength));
         }
