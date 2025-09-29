@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a399a2-8744-481e-828c-e0a09f921b67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d9/Code.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d9/test1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/swap.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/replaceRange.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/runBatch.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/runBatch.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d9/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d9/Code.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +176,7 @@
     "Gradle.aoc d4.executor": "Debug",
     "Gradle.aoc d5.executor": "Debug",
     "Gradle.aoc d6.executor": "Profiler#1",
+    "Gradle.aoc d9.executor": "Run",
     "Kotlin script (Beta).scratch_1.kts.executor": "Debug",
     "Kotlin script (Beta).scratch_3.kts.executor": "Run",
     "NIXITCH_NIXPKGS_CONFIG": "/etc/nix/nixpkgs-config.nix",
@@ -239,7 +240,7 @@
       <recent name="solutions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.aoc d12">
+  <component name="RunManager" selected="Gradle.aoc d9">
     <configuration name="Debug" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -306,12 +307,12 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="aoc d12" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="aoc d9" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--stacktrace -DDAY=5 -DYEAR=24" />
+        <option name="scriptParameters" value="--stacktrace -DDAY=9 -DYEAR=24" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -330,7 +331,7 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.Debug" />
-      <item itemvalue="Gradle.aoc d12" />
+      <item itemvalue="Gradle.aoc d9" />
       <item itemvalue="Gradle.aoc [downloadInput]" />
     </list>
     <recent_temporary>
@@ -492,8 +493,19 @@
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="48" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="49" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="this" language="kotlin" />
+        <watch expression="fragments[whitespaceIdx]" language="kotlin" />
+        <watch expression="it" language="kotlin" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

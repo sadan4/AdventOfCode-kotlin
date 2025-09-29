@@ -1,11 +1,9 @@
-import { readdir, stat } from "node:fs/promises";
-import { getCodeFilename, getInputFilename, getYearDir, parseArgs } from "./common.mjs";
-import { spawn } from "node:child_process";
-import { createWriteStream } from "node:fs";
-import { join } from "node:path";
-import { Duplex, PassThrough, Readable, Writable } from "node:stream";
+import {readdir, stat} from "node:fs/promises";
+import {getCodeFilename, getYearDir, parseArgs} from "./common.mjs";
+import {spawn} from "node:child_process";
+import {join} from "node:path";
+import {PassThrough} from "node:stream";
 import assert from "node:assert";
-import { Socket } from "node:net";
 
 /**
  * @param {string} year
