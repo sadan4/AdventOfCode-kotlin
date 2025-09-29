@@ -41,15 +41,16 @@ async function genDays(year) {
 async function results(year, days) {
     assert(days.length !== 0, "Days must have at least one element")
     const todo = days;
-    let cur;
-    while (cur = days.pop()) {
+    let controller = new AbortController();
+    await Promise.all(days.map(async (day) =>  {
         const outstream = new PassThrough();
         // https://stackoverflow.com/questions/78963790/the-argument-stdio-is-invalid-received-customwritablestream
         const child = spawn("node", [
             join(import.meta.dirname, "run.mjs"),
             `--year=${year}`,
-            `--day=${cur}`
+            `--day=${day}`
         ], {
+            signal: controller.signal,
             stdio: ["ignore", "pipe", "pipe"],
         })
         child.stdout.pipe(outstream);
@@ -58,14 +59,19 @@ async function results(year, days) {
          * @type {number}
          */
         const code = await new Promise(res => child.on("exit", res));
-        if (code !== 0) {
-            console.error(`day ${cur} failed`);
-            outstream.pipe(process.stdout);
+        if (controller.signal.aborted) {
             return;
-        } else {
-            console.log(`day ${cur} passed`)
         }
-    }
+        if (code !== 0) {
+            const msg = `day ${day} failed`;
+            console.error(msg);
+            outstream.pipe(process.stdout);
+            controller.abort(msg)
+            throw new Error(msg);
+        } else {
+            console.log(`day ${day} passed`)
+        }
+    }));
     console.log("All days passed")
 }
 async function main() {
