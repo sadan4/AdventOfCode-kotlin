@@ -102,6 +102,10 @@ class Coord(val x: Int, val y: Int) {
         return Coord(x * other, y * other)
     }
 
+    operator fun div(other: Int): Coord {
+        return Coord(x / other, y / other)
+    }
+
     operator fun unaryMinus(): Coord {
         return Coord(-x, -y)
     }

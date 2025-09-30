@@ -130,9 +130,11 @@ open class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) : Collection<
      *
      * the returned coords are inclusive
      */
-    fun coordsOfLine(at: Coord, direction: IHasShift): Iterable<Coord> {
+    fun coordsOfLine(at: Coord, direction: IHasShift): Iterable<Coord> = coordsOfLine(at, direction.toShift());
+
+    fun coordsOfLine(at: Coord, direction: Coord): Iterable<Coord> {
         val (x, y) = at
-        val (sx, sy) = direction.toShift()
+        val (sx, sy) = direction
         val height = this.height - 1.0;
         val width = this.width - 1.0
         return at lineTo (at + Coord(
@@ -243,5 +245,11 @@ open class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) : Collection<
     public operator fun get(c: Coord): T = arr[c.y][c.x]
     public operator fun set(c: Coord, value: T) {
         arr[c.y][c.x] = value
+    }
+
+    public open fun swap(a: Coord, b: Coord) {
+        val tmp = this[a];
+        this[a] = this[b];
+        this[b] = tmp;
     }
 }

@@ -116,27 +116,27 @@ class Code : Solution<TInput>() {
     // This is a bad problem
     // see: https://www.youtube.com/watch?v=hhRC8XrXY1o
     override fun part2(input: TInput): Any? {
-        val robots = input.map {
-            it.parseRobot()
-        }
-        for (i in listOf(28, 55)) {
-            val grid = RectangularGrid(List(BOARD_SIZE.y) {
-                List(BOARD_SIZE.x) {
-                    ' '
-                }
-            })
-            robots
-                .map {
-                    it.position + (it.velocity * i)
-                }
-                .normalizeRobotPosition()
-                .forEach {
-                    grid[it] = '#'
-                }
-            println("$i")
-            println(grid)
-            println("\n===================================================================================\n")
-        }
+//        val robots = input.map {
+//            it.parseRobot()
+//        }
+//        for (i in listOf(28, 55)) {
+//            val grid = RectangularGrid(List(BOARD_SIZE.y) {
+//                List(BOARD_SIZE.x) {
+//                    ' '
+//                }
+//            })
+//            robots
+//                .map {
+//                    it.position + (it.velocity * i)
+//                }
+//                .normalizeRobotPosition()
+//                .forEach {
+//                    grid[it] = '#'
+//                }
+//            println("$i")
+//            println(grid)
+//            println("\n===================================================================================\n")
+//        }
         return null
     }
 }
