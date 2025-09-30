@@ -1,6 +1,7 @@
 package zip.sadan.util.twoD
 
 import zip.sadan.util.direction.Diagonal
+import zip.sadan.util.direction.IHasShift
 import zip.sadan.util.direction.Linear
 import zip.sadan.util.direction.Quadrant
 import kotlin.collections.ArrayList
@@ -32,10 +33,10 @@ class Coord(val x: Int, val y: Int) {
 
     fun linearNeighborsWithDir(): List<Pair<Linear, Coord>> {
         return listOf(
-            Linear.N to this + Linear.N.toShift(),
-            Linear.S to this + Linear.S.toShift(),
-            Linear.E to this + Linear.E.toShift(),
-            Linear.W to this + Linear.W.toShift()
+            Linear.N to this + Linear.N,
+            Linear.S to this + Linear.S,
+            Linear.E to this + Linear.E,
+            Linear.W to this + Linear.W,
         )
     }
 
@@ -47,10 +48,10 @@ class Coord(val x: Int, val y: Int) {
 
     fun diagonalNeighbors(): List<Coord> {
         return listOf(
-            this + Diagonal.NE.toShift(),
-            this + Diagonal.NW.toShift(),
-            this + Diagonal.SE.toShift(),
-            this + Diagonal.SW.toShift()
+            this + Diagonal.NE,
+            this + Diagonal.NW,
+            this + Diagonal.SE,
+            this + Diagonal.SW,
         )
     }
 
@@ -84,6 +85,14 @@ class Coord(val x: Int, val y: Int) {
 
     operator fun minus(other: Coord): Coord {
         return Coord(x - other.x, y - other.y)
+    }
+
+    operator fun plus(other: IHasShift): Coord {
+        return this + other.toShift();
+    }
+
+    operator fun minus(other: IHasShift): Coord {
+        return this - other.toShift();
     }
 
     operator fun plus(other: Int): Coord {

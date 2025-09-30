@@ -121,9 +121,9 @@ private class WideRobotGrid(items: TGrid<WideGridItem>) : RectangularGrid<WideGr
     private fun push(origin: Coord, shift: Coord) {
         val (head, tail) = run {
             if (this[origin] == WideGridItem.BOX_START) {
-                Pair(origin, origin + Linear.E.toShift())
+                Pair(origin, origin + Linear.E)
             } else {
-                Pair(origin + Linear.W.toShift(), origin)
+                Pair(origin + Linear.W, origin)
             }
         }
         if (!isBox(head) || !isBox(tail)) {
@@ -165,9 +165,9 @@ private class WideRobotGrid(items: TGrid<WideGridItem>) : RectangularGrid<WideGr
         }
         val (nextHead, nextTail) = run {
             if (this[box] == WideGridItem.BOX_START) {
-                Pair(box, box + Linear.E.toShift())
+                Pair(box, box + Linear.E)
             } else {
-                Pair(box + Linear.W.toShift(), box)
+                Pair(box + Linear.W, box)
             }
         }.map {
             it + inShift

@@ -10,7 +10,7 @@ fun Pair<Linear, Coord>.toEdge() = Edge(this.second, this.first);
 fun Pair<Coord, Coord>.toEdge() = Edge(this.first, this.second);
 
 class Edge(val a: Coord, val b: Coord) {
-    constructor(a: Coord, b: Linear) : this(a, a + b.toShift());
+    constructor(a: Coord, b: Linear) : this(a, a + b);
 
     override fun hashCode(): Int {
         var result = a.hashCode();
