@@ -6,6 +6,7 @@ import zip.sadan.util.debug.Solved
 import kotlin.math.abs
 import kotlin.math.absoluteValue
 import kotlin.math.floor
+import kotlin.math.sign
 
 private typealias TInput = List<String>
 
@@ -41,31 +42,31 @@ class Code : Solution<TInput>() {
         return zeroCount;
     }
 
-    @UseFile("./test1.txt")
+    @UseFile("./input.txt")
+    @Solved("6289")
     override fun part2(input: TInput): Any? {
         var cur = 50;
         var zeroCount = 0;
         val parsed = input.parseInput();
-        for (i in parsed) {
-            if (i == 0) continue;
-            val old = cur;
-            val new = (cur + i) % 100;
-            val right = abs(i) == i;
-            if (i >= 100) {
+        for (_i in parsed) {
+            var i = _i;
+            if (abs(i) >= 100) {
                 zeroCount += abs(i) / 100;
+                i %= 100
             }
-            if (new == 0) {
+            val old = cur;
+            cur += i;
+            if (old % 100 == 0) {
+                continue
+            }
+            val new = cur;
+            if (new % 100 == 0) {
                 zeroCount++;
-            } else if (right) {
-                if (new < old) {
-                    zeroCount++;
-                }
-            } else {
-                if (old < new) {
-                    zeroCount++;
-                }
+            } else if (new / 100 != old / 100) {
+                zeroCount++;
+            } else if (new / 100 == 0 && new.sign != old.sign) {
+                zeroCount++;
             }
-            cur = new;
         }
         return zeroCount;
     }
