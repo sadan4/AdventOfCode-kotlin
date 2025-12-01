@@ -60,12 +60,12 @@ class Code : Solution<TInput>() {
                 continue
             }
             val new = cur;
-            if (new % 100 == 0) {
-                zeroCount++;
-            } else if (new / 100 != old / 100) {
-                zeroCount++;
-            } else if (new / 100 == 0 && new.sign != old.sign) {
-                zeroCount++;
+            when {
+                new % 100 == 0
+                || new / 100 != old / 100
+                || new / 100 == 0 && new.sign != old.sign -> {
+                    zeroCount++;
+                }
             }
         }
         return zeroCount;

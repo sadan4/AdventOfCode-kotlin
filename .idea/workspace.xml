@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a2c3906-1af5-453e-8a57-de76130f3cfe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d1/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d1/Code.kt" afterDir="false" />
     </list>
@@ -131,7 +130,7 @@
       <workItem from="1764608265323" duration="2890000" />
       <workItem from="1764617210769" duration="1405000" />
       <workItem from="1764618629045" duration="588000" />
-      <workItem from="1764619230371" duration="1561000" />
+      <workItem from="1764619230371" duration="2053000" />
     </task>
     <servers />
   </component>
