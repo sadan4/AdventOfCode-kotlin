@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a2c3906-1af5-453e-8a57-de76130f3cfe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d1/test1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d15/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d15/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Edge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Edge.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +32,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-9.1.0-bin/9agqghryom9wkf8r80qlhnts3/gradle-9.1.0" javaHome="$USER_HOME$/.jdks/temurin-25" gradleVersion="9.1.0" />
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sadan4&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:sadan4/AdventOfCode-kotlin.git&quot;,
+    &quot;accountId&quot;: &quot;360215c2-e478-4822-906a-16047a3715ef&quot;
+  }
+}</component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\meyer\.gradle\wrapper\dists\gradle-9.1.0-bin\9agqghryom9wkf8r80qlhnts3\gradle-9.1.0" javaHome="C:\Users\meyer\.jdks\jbr-21.0.5" gradleVersion="9.1.0" />
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.0.21/4789c95c3f2037f6689c0786baf1684275734ad3/kotlin-stdlib-2.0.21-sources.jar!/jvmMain/kotlin/Collections.kt" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.0.21/4789c95c3f2037f6689c0786baf1684275734ad3/kotlin-stdlib-2.0.21-sources.jar!/jvmMain/kotlin/Iterator.kt" root0="SKIP_INSPECTION" />
@@ -48,27 +59,29 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.day 15.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.day 15.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.7\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration name="day 15" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="day 1" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="-DYEAR=24 -DDAY=15" />
+        <option name="scriptParameters" value="-DYEAR=25 -DDAY=1" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -89,11 +102,11 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9a2c3906-1af5-453e-8a57-de76130f3cfe" name="Changes" comment="" />
@@ -103,6 +116,8 @@
       <updated>1759183554362</updated>
       <workItem from="1759183556410" duration="37000" />
       <workItem from="1759183678468" duration="9843000" />
+      <workItem from="1759842644917" duration="27000" />
+      <workItem from="1764608265323" duration="2890000" />
     </task>
     <servers />
   </component>
@@ -119,6 +134,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
