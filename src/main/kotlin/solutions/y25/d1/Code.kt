@@ -56,11 +56,10 @@ class Code : Solution<TInput>() {
             }
             val old = cur;
             cur += i;
-            if (old % 100 == 0) {
-                continue
-            }
             val new = cur;
             when {
+                // noop
+                old % 100 == 0 -> {}
                 new % 100 == 0
                 || new / 100 != old / 100
                 || new / 100 == 0 && new.sign != old.sign -> {
