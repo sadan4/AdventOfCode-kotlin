@@ -10,8 +10,6 @@ import kotlin.math.sign
 
 private typealias TInput = List<String>
 
-data class Instruction(val clicks: Int);
-
 class Code : Solution<TInput>() {
     override val year: Number = 25
     override val day: Number = 1
@@ -48,15 +46,13 @@ class Code : Solution<TInput>() {
         var cur = 50;
         var zeroCount = 0;
         val parsed = input.parseInput();
-        for (_i in parsed) {
-            var i = _i;
-            if (abs(i) >= 100) {
-                zeroCount += abs(i) / 100;
-                i %= 100
-            }
+        for (i in parsed) {
             val old = cur;
-            cur += i;
+            cur += i % 100;
             val new = cur;
+
+            zeroCount += abs(i) / 100;
+
             when {
                 // noop
                 old % 100 == 0 -> {}
