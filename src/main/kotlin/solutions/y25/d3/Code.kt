@@ -31,32 +31,26 @@ class Code : Solution<TInput>() {
             }
     }
 
+    private fun List<Int>.maxIdx(start: Int = 0, end: Int = size): Int {
+        var max = 0;
+        var maxIdx = 0;
+        for (i in start until end) {
+            val cur = this[i];
+            if (cur == 0) {
+                return i;
+            }
+            if (cur > max) {
+                max = cur;
+                maxIdx = i;
+            }
+        }
+        return maxIdx;
+    }
+
     private fun List<Int>.highestCombo1(): Int {
-        var first = 0
-        var idx = 0
-        var second = 0
-        for (i in 0..<size - 1) {
-            val e = this[i]
-            if (e == 9) {
-                first = 9;
-                idx = i;
-                break
-            }
-            if (e > first) {
-                first = e
-                idx = i
-            }
-        }
-        for (i in idx + 1..<size) {
-            val e = this[i]
-            if (e == 9) {
-                return first * 10 + e
-            }
-            if (e > second) {
-                second = e
-            }
-        }
-        return first * 10 + second
+        val firstIdx = maxIdx(end = size - 1);
+        val secondIdx = maxIdx(firstIdx + 1);
+        return this[firstIdx] * 10 + this[secondIdx]
     }
 
     @UseFile("./input.txt")
@@ -69,40 +63,26 @@ class Code : Solution<TInput>() {
             }
     }
 
-    // idx to val
-    private fun List<Int>.nextHighestNumber(start: Int, last: Int = size - 1): Pair<Int, Int> {
-        var cur = -1
-        var idx = -1;
-        for (i in start..last) {
-            val e = this[i]
-            if (e == 9) {
-                return i to 9
-            }
-            if (e > cur) {
-                cur = e
-                idx = i
-            }
-        }
-        return idx to cur
-    }
-
     private fun List<Int>.highestCombo2(): Long {
-        var curIdx = 0;
-        var ret = 0L;
-        for (i in 0..11) {
-            val num = nextHighestNumber(curIdx, size - (11 - i) - 1).let {
-                curIdx = it.first
-                it.second
+        var result = 0L;
+        var lastIdx = 0;
+        for (step in 11 downTo 0) {
+            val start = lastIdx;
+            val end = size - step;
+            if (end - start == 1) {
+                return result + (step downTo 0)
+                    .sumOf {
+                        this[start + step - it] * 10.0.pow(it).toLong()
+                    }
             }
-
-            ret += num * 10.0
-                .pow(11 - i)
-                .toLong()
+            lastIdx = maxIdx(start, end);
+            result += this[lastIdx++] * 10.0.pow(step).toLong();
         }
-        return ret;
+        return result;
     }
 
-    @UseFile("./test.txt")
+    @UseFile("./input.txt")
+    @Solved("176582889354075")
     override fun part2(input: TInput): Any? {
         return input
             .parse()
