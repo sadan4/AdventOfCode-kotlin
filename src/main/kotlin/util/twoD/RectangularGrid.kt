@@ -252,4 +252,27 @@ open class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) : Collection<
         this[a] = this[b];
         this[b] = tmp;
     }
+
+    public fun allCoords(): List<Coord> = (0..<arr.size).flatMap { y ->
+        (0..<arr[0].size).map { x ->
+            Coord(x, y)
+        }
+    }
+
+    /**
+     * called with the current grid as a receiver
+     */
+    public inline fun mapWithCoord(mapper: RectangularGrid<T>.(Coord, T) -> T): RectangularGrid<T> {
+        val ret = clone()
+        ret.allCoords().forEach {
+            ret[it] = mapper(it, this[it])
+        }
+        return ret
+    }
+
+    public inline fun countWithCoord(mapper: RectangularGrid<T>.(Coord, T) -> Boolean): Int {
+        return allCoords().count {
+            mapper(it, this[it])
+        }
+    }
 }
