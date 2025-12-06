@@ -1,6 +1,5 @@
 package zip.sadan.solutions.y25.d6
 
-import util.input.UseFile
 import zip.sadan.Solution
 import zip.sadan.util.collections.list.dropLast
 import zip.sadan.util.collections.list.toCharList
@@ -14,9 +13,8 @@ private typealias TInput = List<String>
 
 private val SPLIT_REGEX = Regex("""\s+""")
 
-enum class Operation {
-    ADD,
-    MULTIPLY;
+private enum class Operation {
+    ADD, MULTIPLY;
 
     fun doOperation(lhs: Long, rhs: Long): Long = when (this) {
         ADD -> lhs + rhs
@@ -70,12 +68,11 @@ private fun parseOperators(operators: String, height: Int): List<Pair<Operation,
 }
 
 private fun TInput.parseInput(): Worksheet {
-    val numbersLines = subList(0, size - 1)
-        .map {
-            it
-                .split(SPLIT_REGEX)
-                .map(String::toLong)
-        }
+    val numbersLines = subList(0, size - 1).map {
+        it
+            .split(SPLIT_REGEX)
+            .map(String::toLong)
+    }
     val operators = last()
         .trim()
         .split(SPLIT_REGEX)
@@ -115,10 +112,8 @@ class Code : Solution<TInput>() {
             numbers
                 .mapNotNull {
                     it
-                        .filterNot {
-                            grid[it].isWhitespace()
-                        }
                         .map(grid::get)
+                        .filterNot(Char::isWhitespace)
                         .joinToString("")
                         .toLongOrNull()
                 }

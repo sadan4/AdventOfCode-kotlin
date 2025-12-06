@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a2c3906-1af5-453e-8a57-de76130f3cfe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/dropLast.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/util/collections/list/toCharList.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d12/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d12/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d4/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d4/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d6/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d8/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d8/Code.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d2/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d2/Code.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d6/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d6/Code.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
