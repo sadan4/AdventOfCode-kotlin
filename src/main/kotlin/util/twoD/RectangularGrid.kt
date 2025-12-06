@@ -259,20 +259,36 @@ open class RectangularGrid<T>(arr: TGrid<T>, val rootCoord: Coord) : Collection<
         }
     }
 
+//    public inline fun forEachWithCoord(fn: this<T>.(Coord, T) -> Unit) {
+//        allCoords().forEach {
+//            fn(it, this[it])
+//        }
+//    }
+
     /**
      * called with the current grid as a receiver
      */
     public inline fun mapWithCoord(mapper: RectangularGrid<T>.(Coord, T) -> T): RectangularGrid<T> {
         val ret = clone()
-        ret.allCoords().forEach {
-            ret[it] = mapper(it, this[it])
-        }
+        ret
+            .allCoords()
+            .forEach {
+                ret[it] = mapper(it, this[it])
+            }
         return ret
     }
 
     public inline fun countWithCoord(mapper: RectangularGrid<T>.(Coord, T) -> Boolean): Int {
         return allCoords().count {
             mapper(it, this[it])
+        }
+    }
+
+    companion object {
+        fun <T, R : RectangularGrid<T>> R.forEachWithCoord(fn: R.(Coord, T) -> Unit) {
+            allCoords().forEach {
+                fn(it, this[it])
+            }
         }
     }
 }
