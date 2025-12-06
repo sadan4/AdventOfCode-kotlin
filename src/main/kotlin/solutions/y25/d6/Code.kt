@@ -1,9 +1,8 @@
 package zip.sadan.solutions.y25.d6
 
+import util.input.UseFile
 import zip.sadan.Solution
-import zip.sadan.solutions.y25.d6.Worksheet.Operation
-import zip.sadan.solutions.y25.d6.Worksheet.Operation.ADD
-import zip.sadan.solutions.y25.d6.Worksheet.Operation.MULTIPLY
+import zip.sadan.util.debug.Solved
 import zip.sadan.util.twoD.Coord
 import zip.sadan.util.twoD.RectangularGrid
 import zip.sadan.util.twoD.RectangularGrid.Companion.forEachWithCoord
@@ -13,22 +12,30 @@ private typealias TInput = List<String>
 
 private val SPLIT_REGEX = Regex("""\s+""")
 
-private fun String.parseOperation(): Operation = when (trim()) {
-    "+" -> ADD
-    "*" -> MULTIPLY
-    else -> error("invalid string: $this")
+enum class Operation {
+    ADD,
+    MULTIPLY;
+
+    fun doOperation(lhs: Long, rhs: Long): Long = when (this) {
+        ADD -> lhs + rhs
+        MULTIPLY -> lhs * rhs
+    }
+
+    fun initialValue(): Long = when (this) {
+        ADD -> 0
+        MULTIPLY -> 1
+    }
+}
+
+private fun String.parseOperation(): Operation = parseOperationOrNull() ?: error("Invalid operation: $this")
+
+private fun String.parseOperationOrNull(): Operation? = when (trim()) {
+    "+" -> Operation.ADD
+    "*" -> Operation.MULTIPLY
+    else -> null
 }
 
 private class Worksheet(items: TGrid<Long>, private val operators: List<Operation>) : RectangularGrid<Long>(items) {
-    enum class Operation {
-        ADD,
-        MULTIPLY;
-
-        fun doOperation(lhs: Long, rhs: Long): Long = when (this) {
-            ADD -> lhs + rhs
-            MULTIPLY -> lhs * rhs
-        }
-    }
 
     fun operatorForCoord(coord: Coord): Operation {
         if (coord !in this) {
@@ -36,6 +43,28 @@ private class Worksheet(items: TGrid<Long>, private val operators: List<Operatio
         }
         return operators[coord.x]
     }
+}
+
+private fun parseOperators(operators: String, height: Int): List<Pair<Operation, Set<List<Coord>>>> {
+    val ret = mutableListOf<Pair<Operation, Set<List<Coord>>>>()
+    var cur: Pair<Operation, MutableSet<List<Coord>>>? = null;
+    for ((idx, ch) in operators.withIndex()) {
+        val maybeOp = ch
+            .toString()
+            .parseOperationOrNull();
+        if (maybeOp != null) {
+            if (cur != null) {
+                ret.add(cur)
+            }
+            cur = maybeOp to mutableSetOf()
+        }
+        // FIXME: using rangeUntil is broken
+        cur!!.second.add((Coord(idx, 0) to Coord(idx, height - 1)).toList())
+    }
+    if (cur != null) {
+        ret.add(cur)
+    }
+    return ret
 }
 
 private fun TInput.parseInput(): Worksheet {
@@ -56,6 +85,7 @@ class Code : Solution<TInput>() {
     override val year: Number = 25
     override val day: Number = 6
 
+    @Solved("5782351442566")
     override fun part1(input: TInput): Any? {
         val resultTracker = mutableMapOf<Int, Long>();
         input
@@ -72,7 +102,28 @@ class Code : Solution<TInput>() {
         return resultTracker.values.sum()
     }
 
+    @Solved("10194584711842")
     override fun part2(input: TInput): Any? {
-        return ""
+        val grid = RectangularGrid(
+            input
+                .subList(0, input.size - 1)
+                .map {
+                    it
+                        .toCharArray()
+                        .toList()
+                })
+        return parseOperators(input.last(), input.size - 1).sumOf { (op, numbers) ->
+            numbers
+                .mapNotNull {
+                    it
+                        .filterNot {
+                            grid[it].isWhitespace()
+                        }
+                        .map(grid::get)
+                        .joinToString("")
+                        .toLongOrNull()
+                }
+                .fold(op.initialValue(), op::doOperation)
+        }
     }
 }
