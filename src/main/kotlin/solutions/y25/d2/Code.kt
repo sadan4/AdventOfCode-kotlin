@@ -4,6 +4,7 @@ import countDigits
 import util.input.UseFile
 import zip.sadan.Solution
 import zip.sadan.util.collections.list.allEqual
+import zip.sadan.util.collections.list.toCharList
 import zip.sadan.util.collections.pair.map
 import zip.sadan.util.collections.pair.toPair
 import zip.sadan.util.debug.Solved
@@ -57,9 +58,7 @@ class Code : Solution<TInput>() {
         if (this < 10) {
             return true;
         }
-        val digits = toString()
-            .toCharArray()
-            .toList()
+        val digits = toString().toCharList()
         val numDigits = digits.size;
         return (1..<numDigits)
             .filter {

@@ -2,6 +2,7 @@ package zip.sadan.solutions.y24.d8
 
 import util.input.UseFile
 import zip.sadan.Solution
+import zip.sadan.util.collections.list.toCharList
 import zip.sadan.util.collections.list.without
 import zip.sadan.util.debug.Solved
 import zip.sadan.util.twoD.Coord
@@ -17,11 +18,7 @@ class Code : Solution<TInput>() {
     @Solved("291")
     @UseFile("./input.txt")
     override fun part1(input: TInput): Any? {
-        val grid = RectangularGrid<Char>(input.map {
-            it
-                .toCharArray()
-                .toList()
-        })
+        val grid = RectangularGrid<Char>(input.map (String::toCharList))
         val allNodes = input
             .joinToString("")
             .toCharArray()
@@ -51,11 +48,7 @@ class Code : Solution<TInput>() {
     @Solved("1015")
     @UseFile("./input.txt")
     override fun part2(input: TInput): Any? {
-        val grid = RectangularGrid<Char>(input.map {
-            it
-                .toCharArray()
-                .toList()
-        })
+        val grid = RectangularGrid<Char>(input.map (String::toCharList))
         val allNodes = input
             .joinToString("")
             .toCharArray()

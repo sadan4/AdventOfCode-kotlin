@@ -2,6 +2,7 @@ package zip.sadan.solutions.y24.d12
 
 import util.input.UseFile
 import zip.sadan.Solution
+import zip.sadan.util.collections.list.toCharList
 import zip.sadan.util.collections.pair.map
 import zip.sadan.util.debug.Solved
 import zip.sadan.util.direction.Linear
@@ -120,11 +121,7 @@ class Code : Solution<TInput>() {
     @Solved("1446042")
     @UseFile("./input.txt")
     override fun part1(input: TInput): Any? {
-        val plants = input.map {
-            it
-                .toCharArray()
-                .toList()
-        }
+        val plants = input.map(String::toCharList)
         val grid = RectangularGrid(plants)
         val plots = HashSet<HashSet<Coord>>()
         val tmpSeen = HashSet<Coord>()
@@ -142,11 +139,7 @@ class Code : Solution<TInput>() {
     @Solved("902742")
     @UseFile("input.txt")
     override fun part2(input: TInput): Any? {
-        val plants = input.map {
-            it
-                .toCharArray()
-                .toList()
-        }
+        val plants = input.map(String::toCharList)
         val grid = RectangularGrid(plants)
         val plots = HashSet<HashSet<Coord>>()
         val tmpSeen = HashSet<Coord>()

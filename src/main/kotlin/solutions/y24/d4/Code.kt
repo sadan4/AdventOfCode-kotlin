@@ -5,6 +5,7 @@ import zip.sadan.Solution
 import zip.sadan.util.twoD.Coord
 import zip.sadan.util.collections.list.Fill
 import zip.sadan.util.collections.list.mult
+import zip.sadan.util.collections.list.toCharList
 import zip.sadan.util.collections.list.window2d
 import zip.sadan.util.debug.Solved
 import zip.sadan.util.direction.Direction
@@ -12,11 +13,7 @@ import zip.sadan.util.twoD.SquareGrid
 
 private fun List<String>.toBufferedCharArray(bufferSize: Int, bufferChar: Char): List<List<Char>> =
     Fill(this.size + (bufferSize * 2), '0').mult(bufferSize) + this
-        .map {
-            it
-                .toCharArray()
-                .toList()
-        }
+        .map(String::toCharList)
         .map { Fill(bufferSize, bufferChar) + it + Fill(bufferSize, bufferChar) } + Fill(
         this.size + (bufferSize * 2), '0'
     ).mult(bufferSize)

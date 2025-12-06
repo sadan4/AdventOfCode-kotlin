@@ -2,6 +2,8 @@ package zip.sadan.solutions.y25.d6
 
 import util.input.UseFile
 import zip.sadan.Solution
+import zip.sadan.util.collections.list.dropLast
+import zip.sadan.util.collections.list.toCharList
 import zip.sadan.util.debug.Solved
 import zip.sadan.util.twoD.Coord
 import zip.sadan.util.twoD.RectangularGrid
@@ -106,12 +108,9 @@ class Code : Solution<TInput>() {
     override fun part2(input: TInput): Any? {
         val grid = RectangularGrid(
             input
-                .subList(0, input.size - 1)
-                .map {
-                    it
-                        .toCharArray()
-                        .toList()
-                })
+                .dropLast()
+                .map(String::toCharList)
+        )
         return parseOperators(input.last(), input.size - 1).sumOf { (op, numbers) ->
             numbers
                 .mapNotNull {
