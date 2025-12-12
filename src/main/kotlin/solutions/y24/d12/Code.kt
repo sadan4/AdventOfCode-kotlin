@@ -9,10 +9,9 @@ import zip.sadan.util.direction.Linear
 import zip.sadan.util.collections.set.containsAny
 import zip.sadan.util.collections.stack.toStack
 import zip.sadan.util.twoD.Coord
-import zip.sadan.util.twoD.Edge
 import zip.sadan.util.twoD.RectangularGrid
-import zip.sadan.util.twoD.toEdge
 import kotlin.collections.HashSet
+import kotlin.collections.map
 
 private typealias TInput = List<String>
 
@@ -33,6 +32,49 @@ private fun normalizeEdgeDir(dir: Linear): Linear = when (dir) {
     Linear.E, Linear.W -> Linear.E
     Linear.N, Linear.S -> Linear.N
 }
+
+private class Edge(val a: Coord, val b: Coord) {
+    constructor(a: Coord, b: Linear) : this(a, a + b);
+
+    override fun hashCode(): Int {
+        var result = a.hashCode();
+        result = 31 * result + b.hashCode();
+        return result;
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true;
+        if (javaClass != other?.javaClass) return false;
+
+        other as Edge;
+
+        return (a == other.a && b == other.b) || (a == other.b && b == other.a);
+    }
+
+    fun countIn(collection: Collection<Coord>): Int = this.countIn {
+        it in collection
+    }
+
+    private inline fun countIn(contains: (c: Coord) -> Boolean): Int {
+        var count = 0;
+        if (contains(this.a)) {
+            count++;
+        }
+        if (contains(this.b)) {
+            count++;
+        }
+        return count;
+    }
+
+    operator fun plus(shift: Coord): Edge = Edge(this.a + shift, this.b + shift);
+
+    operator fun minus(shift: Coord): Edge = this + -shift;
+}
+
+private fun Coord.linearEdges() = linearNeighbors()
+    .map {
+        Edge(this, it)
+    };
 
 private fun <T> HashSet<Coord>.edges(grid: RectangularGrid<T>): Int {
     if (this.size == 1) {

@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a2c3906-1af5-453e-8a57-de76130f3cfe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d6/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y25/d6/Code.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d12/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/solutions/y24/d12/Code.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Coord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/twoD/Edge.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,31 +75,36 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AdventOfCode-kotlin [:zip.sadan.MainKt.main()].executor": "Debug",
-    "Gradle.Build aoc.executor": "Run",
-    "Gradle.day 1.executor": "Debug",
-    "Gradle.day 15.executor": "Debug",
-    "Gradle.day 2.executor": "Debug",
-    "Gradle.day 3.executor": "Debug",
-    "Gradle.day 6.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/nix/store/g5jilwh0cs0cbxk89k80yv7glkqdxh89-idea-ultimate-2025.2.4/idea-ultimate/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AdventOfCode-kotlin [:zip.sadan.MainKt.main()].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.Build aoc.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.day 1.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.day 15.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.day 2.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.day 3.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.day 6.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/nix/store/g5jilwh0cs0cbxk89k80yv7glkqdxh89-idea-ultimate-2025.2.4/idea-ultimate/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="zip.sadan.util.twoD" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.day 6">
     <configuration name="day 6" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
@@ -140,7 +148,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -169,6 +178,8 @@
       <workItem from="1764777850176" duration="16000" />
       <workItem from="1764787812282" duration="1936000" />
       <workItem from="1764858241333" duration="3068000" />
+      <workItem from="1765071013799" duration="2784000" />
+      <workItem from="1765574457510" duration="5379000" />
     </task>
     <servers />
   </component>

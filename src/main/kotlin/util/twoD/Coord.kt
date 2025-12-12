@@ -57,12 +57,6 @@ class Coord(val x: Int, val y: Int) {
 
     fun neighbors(): List<Coord> = linearNeighbors() + diagonalNeighbors()
 
-    fun linearEdges() = this
-        .linearNeighbors()
-        .map {
-            Edge(this, it)
-        };
-
     fun toPair(): Pair<Int, Int> = Pair(x, y)
 
     fun getQuadrant(): Quadrant {
